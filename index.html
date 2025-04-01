@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demarq Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: #00294d;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 40px;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        .cart {
+            color: white;
+            font-size: 20px;
+            position: relative;
+        }
+        .cart::after {
+            content: "0";
+            background: red;
+            color: white;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 3px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+        .breadcrumb {
+            padding: 10px;
+            background: #f1f1f1;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            max-width: 900px;
+            margin: auto;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .product-images {
+            display: flex;
+            overflow-x: scroll;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .product-images img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .tag {
+            background: limegreen;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .price {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .discount {
+            background: #00294d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .stock-warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn {
+            background: limegreen;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Demarq Logo">
+        <div class="search-bar">
+            <input type="text" placeholder="Senseo, lave-linge, TV 4K...">
+        </div>
+        <div class="cart">🛒</div>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="#">Accueil</a> > <a href="#">Lot de 2 micros sans fil</a>
+    </div>
+
+    <div class="container">
+        <span class="tag">100% neuf !</span>
+        <div class="title">LOT DE 2 MICROS SANS FIL KARAOKÉ INTEMPO EE7507WHTSTKEU7</div>
+
+        <div class="product-images">
+            <img src="image1.jpg" alt="Micro 1">
+            <img src="image2.jpg" alt="Micro 2">
+            <img src="image3.jpg" alt="Micro 3">
+            <img src="image4.jpg" alt="Micro 4">
+            <img src="image5.jpg" alt="Micro 5">
+            <img src="image6.jpg" alt="Micro 6">
+        </div>
+
+        <ul>
+            <li>Lot de 2 micros sans fil</li>
+            <li>Technologie Bluetooth</li>
+            <li>Compatible avec appareils Bluetooth</li>
+            <li>Rechargeable par USB</li>
+            <li>Portée jusqu'à 25 m sans fil</li>
+        </ul>
+
+        <div class="price">14,99 € <span class="discount">63% d'économie</span></div>
+        <div class="stock-warning">Plus que 2 en stock ! Ne traînez plus...</div>
+
+        <a href="#" class="btn">🛒 Ajouter au panier</a>
+    </div>
+
+</body>
+</html>
