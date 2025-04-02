@@ -94,9 +94,9 @@
     }
 
     .carousel-images img {
+      height: 100%;
       width: 100%;
-      height: 100%; /* تأكد من أن الصورة تأخذ كامل ارتفاع الحاوية */
-      object-fit: cover; /* لتغطية الحاوية بشكل كامل دون تشويه الصورة */
+      object-fit: contain;
       display: block;
       margin: 0 10px;
       scroll-snap-align: start;
@@ -198,6 +198,12 @@
       text-decoration: none;
     }
 
+    .availability span {
+      display: block;
+      color: green;
+      margin-top: 5px;
+    }
+
     /* Footer */
     footer {
       background: #002640;
@@ -234,6 +240,26 @@
     .trust {
       color: #00e676;
       margin-top: 15px;
+    }
+
+    /* Add custom styles here for the button and sections*/
+    .footer-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-buttons a {
+      background-color: #2f3542;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .footer-buttons a:hover {
+      background-color: #e6005c;
     }
 
     @media(max-width: 768px) {
@@ -273,6 +299,7 @@
         <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
       </div>
     </div>
+
     <div class="dots" id="dots"></div>
 
     <div class="section">
@@ -315,7 +342,6 @@
 
     <a href="#" class="btn">Ajouter au panier</a>
 
-    <!-- Description Section Start -->
     <div class="description-box">
       <h2>DESCRIPTION</h2>
       <p>Profitez de vos soirées karaoké avec ce <strong>lot de 2 micros sans fil Bluetooth</strong> Intempo, offrant une excellente portée et une grande compatibilité.</p>
@@ -339,8 +365,6 @@
       <p>Profitez d'une garantie fabricant et de notre service client disponible pour toute question ou assistance sur ce produit.</p>
       <p>Avec ce <strong>lot de 2 micros sans fil Bluetooth</strong>, offrez une <strong>expérience de karaoké immersive</strong> et profitez de chaque chanson avec une qualité audio exceptionnelle.</p>
     </div>
-    <!-- Description Section End -->
-
   </div>
 
   <footer>
