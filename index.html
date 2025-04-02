@@ -81,10 +81,10 @@
     /* Carousel */
     .carousel {
       width: 100%;
-      height: 500px;
+      max-width: 500px;
+      height: 500px; /* تحديد ارتفاع ثابت ليكون المربع */
       overflow: hidden;
       margin: 0 auto;
-      position: relative;
     }
 
     .carousel-images {
@@ -94,9 +94,9 @@
     }
 
     .carousel-images img {
-      height: 100%;
+      height: auto;
       width: 100%;
-      object-fit: contain;
+      object-fit: contain; /* لتجنب التشويه مع الحفاظ على الأبعاد الأصلية */
       display: block;
       margin: 0 10px;
       scroll-snap-align: start;
@@ -106,7 +106,6 @@
       text-align: center;
       margin-top: 10px;
     }
-
     .dot {
       height: 10px;
       width: 10px;
@@ -233,6 +232,7 @@
 
     @media(max-width: 768px) {
       .price-box { flex-direction: column; align-items: flex-start; }
+      .carousel-images img { height: auto; }
     }
   </style>
 </head>
@@ -270,25 +270,6 @@
     </div>
     <div class="dots" id="dots"></div>
 
-    <div class="section">
-      <h2>RÉSUMÉ</h2>
-      <ul>
-        <li>Lot de 2 micros sans fil</li>
-        <li>Technologie Bluetooth</li>
-        <li>Compatible avec appareils Bluetooth</li>
-        <li>Rechargeable par USB</li>
-        <li>Portée jusqu'à 25 m sans fil</li>
-      </ul>
-    </div>
-
-    <div class="section info">
-      <h2>INFORMATIONS</h2>
-      <p><strong>Référence :</strong> EE7507WHTSTKEU7</p>
-      <p><strong>Marque :</strong> Intempo</p>
-      <p><strong>Origine :</strong> Neuf</p>
-      <p><strong>Garantie :</strong> 2 ans</p>
-    </div>
-
     <div class="price-box">
       <div class="price">14,99 €</div>
       <div class="discount">63% d’économie*</div>
@@ -298,7 +279,9 @@
       Alma – Paiement en 2x, 3x, 4x à partir de 50 €
     </div>
 
-    <div class="stock">Plus que 2 en stock ! Ne traînez plus…</div>
+    <div class="stock">
+      Plus que 2 en stock ! Ne traînez plus…
+    </div>
 
     <div class="availability">
       <span>Disponible en ligne</span>
@@ -311,6 +294,22 @@
     <div class="section">
       <h2>DESCRIPTION</h2>
       <p>Profitez de vos soirées karaoké avec ce <strong>lot de 2 micros sans fil Bluetooth</strong> Intempo, offrant une excellente portée et une grande compatibilité.</p>
+      <h3>Caractéristiques techniques</h3>
+      <ul>
+        <li>Technologie sans fil : Bluetooth</li>
+        <li>Compatibilité : smartphones, tablettes, TV et autres</li>
+        <li>Portée : jusqu’à 25 mètres</li>
+        <li>Batterie rechargeable via câble USB inclus</li>
+        <li>Indicateur LED de charge</li>
+      </ul>
+      <h3>Avantages du produit</h3>
+      <ul>
+        <li>Liberté de mouvement sans fil</li>
+        <li>Configuration simple et rapide</li>
+        <li>Design léger et confortable</li>
+        <li>Idéal pour soirées entre amis ou famille</li>
+        <li>Recharge facile</li>
+      </ul>
     </div>
   </div>
 
@@ -332,7 +331,7 @@
   </footer>
 
   <script>
-    const images = document.querySelector('.carousel-images');
+    const images = document.getElementById("carouselImages");
     const dots = document.getElementById("dots");
     const total = images.children.length;
     let current = 0;
