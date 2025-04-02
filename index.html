@@ -91,9 +91,11 @@
       transition: transform 0.5s ease;
     }
     .carousel-images img {
-      width: 100%;
-      border-radius: 8px;
-    }
+  width: 100%; /* اجعل الصورة تأخذ العرض بالكامل */
+  height: auto; /* لضمان الحفاظ على النسبة */
+  object-fit: cover; /* لتغطية المساحة بشكل جيد مع الحفاظ على تناسب الصورة */
+  border-radius: 8px;
+}
     .dots {
       text-align: center;
       margin-top: 10px;
