@@ -80,38 +80,33 @@
 
     /* Carousel */
     .carousel {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  margin: 0 auto;
-  position: relative;
-}
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      margin: 0 auto;
+      position: relative;
+    }
 
-.carousel-images {
-  display: flex;
-  overflow-x: auto; /* لتمكين التمرير الأفقي */
-  scroll-snap-type: x mandatory;
-}
+    .carousel-images {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
 
-.carousel-images img {
-  height: auto;
-  width: 100%;
-  object-fit: contain; /* لتجنب التشويه مع الحفاظ على الأبعاد الأصلية */
-  display: block;
-  margin: 0 10px;
-  scroll-snap-align: start; /* لضمان توقف التمرير عند الصورة بشكل مناسب */
-}
-.carousel {
-  width: 100%;
-  max-width: 500px;
-  height: 500px; /* تحديد ارتفاع ثابت ليكون المربع */
-  overflow: hidden;
-  margin: 0 auto;
-}
+    .carousel-images img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 10px;
+      scroll-snap-align: start;
+    }
+
     .dots {
       text-align: center;
       margin-top: 10px;
     }
+
     .dot {
       height: 10px;
       width: 10px;
@@ -238,7 +233,6 @@
 
     @media(max-width: 768px) {
       .price-box { flex-direction: column; align-items: flex-start; }
-      .carousel-images img { height: auto; }
     }
   </style>
 </head>
@@ -265,15 +259,15 @@
 
     <div class="badge">100% neuf !</div>
     <div class="carousel">
-  <div class="carousel-images">
-    <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1">
-    <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2">
-    <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3">
-    <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4">
-    <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5">
-    <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
-  </div>
-</div>
+      <div class="carousel-images">
+        <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1">
+        <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2">
+        <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3">
+        <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4">
+        <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5">
+        <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
+      </div>
+    </div>
     <div class="dots" id="dots"></div>
 
     <div class="section">
@@ -317,22 +311,6 @@
     <div class="section">
       <h2>DESCRIPTION</h2>
       <p>Profitez de vos soirées karaoké avec ce <strong>lot de 2 micros sans fil Bluetooth</strong> Intempo, offrant une excellente portée et une grande compatibilité.</p>
-      <h3>Caractéristiques techniques</h3>
-      <ul>
-        <li>Technologie sans fil : Bluetooth</li>
-        <li>Compatibilité : smartphones, tablettes, TV et autres</li>
-        <li>Portée : jusqu’à 25 mètres</li>
-        <li>Batterie rechargeable via câble USB inclus</li>
-        <li>Indicateur LED de charge</li>
-      </ul>
-      <h3>Avantages du produit</h3>
-      <ul>
-        <li>Liberté de mouvement sans fil</li>
-        <li>Configuration simple et rapide</li>
-        <li>Design léger et confortable</li>
-        <li>Idéal pour soirées entre amis ou famille</li>
-        <li>Recharge facile</li>
-      </ul>
     </div>
   </div>
 
@@ -354,7 +332,7 @@
   </footer>
 
   <script>
-    const images = document.getElementById("carouselImages");
+    const images = document.querySelector('.carousel-images');
     const dots = document.getElementById("dots");
     const total = images.children.length;
     let current = 0;
