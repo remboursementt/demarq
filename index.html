@@ -80,23 +80,26 @@
 
     /* Carousel */
     .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 500px;
-      margin: auto;
-    }
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .carousel-images img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
+  height: auto;
+  overflow: hidden;
   margin: 0 auto;
+  position: relative;
+}
+
+.carousel-images {
+  display: flex;
+  overflow-x: auto; /* لتمكين التمرير الأفقي */
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-images img {
+  height: auto;
+  width: 100%;
+  object-fit: contain; /* لتجنب التشويه مع الحفاظ على الأبعاد الأصلية */
+  display: block;
+  margin: 0 10px;
+  scroll-snap-align: start; /* لضمان توقف التمرير عند الصورة بشكل مناسب */
 }
 .carousel {
   width: 100%;
@@ -262,15 +265,15 @@
 
     <div class="badge">100% neuf !</div>
     <div class="carousel">
-      <div class="carousel-images" id="carouselImages">
-        <img src="ee7507whtstkeu7-1.jpg" />
-        <img src="ee7507whtstkeu7-2.jpg" />
-        <img src="ee7507whtstkeu7-3.jpg" />
-        <img src="ee7507whtstkeu7-4.jpg" />
-        <img src="ee7507whtstkeu7-5.jpg" />
-        <img src="ee7507whtstkeu7-6.jpg" />
-      </div>
-    </div>
+  <div class="carousel-images">
+    <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1">
+    <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2">
+    <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3">
+    <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4">
+    <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5">
+    <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
+  </div>
+</div>
     <div class="dots" id="dots"></div>
 
     <div class="section">
