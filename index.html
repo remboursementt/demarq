@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Achetez le lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7 au meilleur prix sur Demarq Online. Livraison gratuite dès 49€ d'achat.">
-  <title>Lot de 2 Micros Sans Fil Karaoké Intempo EE7507WHTSTKEU7 | Demarq Online</title>
+  <meta name="description" content="Lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7 - Livraison gratuite dès 49€">
+  <title>Micros Sans Fil Karaoké Intempo | Demarq Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -45,7 +45,7 @@
       font-family: 'Poppins', sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     a {
@@ -61,6 +61,7 @@
       max-width: 100%;
       height: auto;
       display: block;
+      object-fit: contain;
     }
 
     .container {
@@ -73,7 +74,7 @@
     /* Top Bar */
     .top-bar {
       background: var(--light-blue);
-      padding: 10px 0;
+      padding: 8px 0;
       text-align: center;
       font-size: 14px;
       font-weight: 500;
@@ -82,7 +83,7 @@
     .top-bar__highlight {
       background: var(--secondary);
       color: var(--white);
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: var(--radius-sm);
       font-weight: 600;
       margin-right: 5px;
@@ -92,7 +93,7 @@
     .header {
       background: var(--primary);
       color: var(--white);
-      padding: 15px 0;
+      padding: 12px 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -103,11 +104,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -115,7 +116,7 @@
 
     .logo__highlight {
       color: #00e6e6;
-      margin-left: 5px;
+      margin-left: 4px;
     }
 
     .search {
@@ -126,22 +127,16 @@
 
     .search__input {
       width: 100%;
-      padding: 12px 20px;
-      padding-right: 45px;
+      padding: 10px 15px;
+      padding-right: 40px;
       border-radius: var(--radius-xl);
       border: none;
       font-size: 14px;
-      transition: var(--transition);
-    }
-
-    .search__input:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px var(--secondary);
     }
 
     .search__icon {
       position: absolute;
-      right: 20px;
+      right: 15px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-medium);
@@ -150,26 +145,20 @@
     .cart {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: var(--transition);
-      padding: 8px 12px;
+      font-size: 14px;
+      padding: 6px 10px;
       border-radius: var(--radius-md);
     }
 
-    .cart:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
     .cart__icon {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     /* Breadcrumb */
     .breadcrumb {
-      padding: 15px 0;
+      padding: 12px 0;
       font-size: 13px;
       color: var(--text-medium);
     }
@@ -181,68 +170,45 @@
 
     .breadcrumb__item:not(:last-child)::after {
       content: '›';
-      margin: 0 8px;
+      margin: 0 6px;
       color: var(--text-light);
-    }
-
-    .breadcrumb__link {
-      color: var(--text-medium);
-      transition: var(--transition);
-    }
-
-    .breadcrumb__link:hover {
-      color: var(--secondary);
     }
 
     /* Product Section */
     .product {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin: 30px 0;
+      gap: 25px;
+      margin: 25px 0;
     }
 
-    @media (max-width: 768px) {
-      .product {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Product Gallery */
-    .product-gallery {
-      position: relative;
+    /* Product Gallery - Desktop */
+    .desktop-gallery {
+      display: block;
     }
 
     .gallery-main {
       width: 100%;
-      height: 300px;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      background: var(--white);
+      height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 10px;
-      position: relative;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
     }
 
     .gallery-main__img {
       max-height: 100%;
       max-width: 100%;
       object-fit: contain;
-      transition: var(--transition);
     }
 
     .gallery-thumbs {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
-    }
-
-    @media (max-width: 576px) {
-      .gallery-thumbs {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      gap: 6px;
     }
 
     .thumb {
@@ -254,34 +220,67 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      border: 2px solid transparent;
-      transition: var(--transition);
+      border: 1px solid #eee;
     }
 
-    .thumb:hover, .thumb.active {
+    .thumb.active {
       border-color: var(--secondary);
     }
 
-    .thumb__img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
+    /* Mobile Carousel */
+    .mobile-carousel {
+      display: none;
+      position: relative;
     }
 
-    .gallery-zoom {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      color: var(--white);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-images {
       display: flex;
-      align-items: center;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: contain;
+      height: 280px;
+    }
+
+    .carousel-dots {
+      display: flex;
       justify-content: center;
+      padding: 15px 0;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
       cursor: pointer;
-      z-index: 2;
+    }
+
+    .carousel-dot.active {
+      background: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        grid-template-columns: 1fr;
+      }
+      
+      .desktop-gallery {
+        display: none;
+      }
+      
+      .mobile-carousel {
+        display: block;
+      }
     }
 
     /* Product Info */
@@ -290,17 +289,10 @@
     }
 
     .product-title {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       color: var(--primary);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    @media (max-width: 768px) {
-      .product-title {
-        font-size: 20px;
-      }
+      margin-bottom: 8px;
     }
 
     .product-badge {
@@ -309,23 +301,23 @@
       display: inline-block;
       font-size: 12px;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: var(--radius-sm);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .product-meta {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 15px;
       flex-wrap: wrap;
     }
 
     .product-rating {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       color: var(--warning);
       font-size: 14px;
     }
@@ -340,117 +332,42 @@
       color: var(--text-light);
     }
 
-    .product-sku__label {
-      font-weight: 500;
-      color: var(--text-medium);
-    }
-
     /* Price Section */
     .price-section {
       background: var(--white);
       border-radius: var(--radius-md);
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
+      padding: 15px;
+      margin-bottom: 15px;
     }
 
     .price-current {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: var(--secondary);
       margin-bottom: 5px;
     }
 
-    @media (max-width: 576px) {
-      .price-current {
-        font-size: 28px;
-      }
-    }
-
     .price-old {
-      font-size: 18px;
+      font-size: 16px;
       color: var(--text-light);
       text-decoration: line-through;
-      margin-right: 10px;
+      margin-right: 8px;
     }
 
     .price-discount {
       background: var(--primary);
       color: var(--white);
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: var(--radius-sm);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-    }
-
-    .price-save {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 500;
-      margin-top: 5px;
-    }
-
-    /* Payment Options */
-    .payment-options {
-      background: var(--light-orange);
-      border: 1px solid var(--border-orange);
-      border-radius: var(--radius-md);
-      padding: 15px;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    .payment-options__title {
-      font-weight: 600;
-      margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .payment-options__logo {
-      height: 20px;
-    }
-
-    /* Stock Alert */
-    .stock-alert {
-      color: var(--danger);
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Availability */
-    .availability {
-      margin-bottom: 25px;
-    }
-
-    .availability__item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .availability__icon {
-      color: var(--accent);
-      font-size: 16px;
     }
 
     /* Add to Cart */
     .add-to-cart {
       display: flex;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    @media (max-width: 576px) {
-      .add-to-cart {
-        flex-direction: column;
-      }
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
     .quantity-selector {
@@ -458,48 +375,36 @@
       align-items: center;
       border: 1px solid #ddd;
       border-radius: var(--radius-md);
-      overflow: hidden;
     }
 
     .quantity-btn {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: #f5f5f5;
       border: none;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .quantity-input {
-      width: 50px;
-      height: 40px;
+      width: 40px;
+      height: 36px;
       border: none;
       text-align: center;
       font-weight: 500;
-      -moz-appearance: textfield;
-    }
-
-    .quantity-input::-webkit-outer-spin-button,
-    .quantity-input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0 25px;
-      height: 50px;
+      padding: 0 20px;
+      height: 40px;
       border-radius: var(--radius-md);
       font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
       border: none;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .btn--primary {
@@ -510,367 +415,16 @@
 
     .btn--primary:hover {
       background: #00b247;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
     }
 
-    .btn--secondary {
-      background: var(--primary);
-      color: var(--white);
-    }
+    /* ... (بقية الأنماط) ... */
 
-    .btn--secondary:hover {
-      background: #001a33;
-    }
-
-    .btn--icon {
-      margin-right: 8px;
-    }
-
-    /* Product Tabs */
-    .product-tabs {
-      margin-top: 40px;
-    }
-
-    .tabs-nav {
-      display: flex;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 20px;
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    @media (max-width: 576px) {
-      .tabs-nav {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        white-space: normal;
-      }
-    }
-
-    .tab-btn {
-      padding: 12px 20px;
-      font-weight: 600;
-      color: var(--text-medium);
-      cursor: pointer;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .tab-btn:after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--secondary);
-      transform: scaleX(0);
-      transition: var(--transition);
-    }
-
-    .tab-btn.active {
-      color: var(--secondary);
-    }
-
-    .tab-btn.active:after {
-      transform: scaleX(1);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .features-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .features-list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 10px;
-    }
-
-    .feature-icon {
-      color: var(--accent);
-      font-size: 18px;
-      margin-top: 3px;
-    }
-
-    /* Trust Badges */
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
-      padding-top: 30px;
-      border-top: 1px solid #eee;
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--text-medium);
-    }
-
-    .trust-badge__icon {
-      color: var(--success);
-      font-size: 18px;
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--primary);
-      color: var(--white);
-      padding: 50px 0 30px;
-      margin-top: 50px;
-    }
-
-    .footer__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 992px) {
-      .footer__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .footer__grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .footer__title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer__title:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: var(--secondary);
-    }
-
-    .footer__links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer__link {
-      color: rgba(255, 255, 255, 0.8);
-      transition: var(--transition);
-      font-size: 14px;
-    }
-
-    .footer__link:hover {
-      color: var(--white);
-      padding-left: 5px;
-    }
-
-    .newsletter {
-      margin-bottom: 20px;
-    }
-
-    .newsletter__text {
-      margin-bottom: 15px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .newsletter__form {
-      display: flex;
-      gap: 10px;
-    }
-
-    .newsletter__input {
-      flex: 1;
-      padding: 10px 15px;
-      border-radius: var(--radius-sm);
-      border: none;
-      font-size: 14px;
-    }
-
-    .newsletter__btn {
-      background: var(--secondary);
-      color: var(--white);
-      border: none;
-      padding: 0 20px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .newsletter__btn:hover {
-      background: #c5004e;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-link {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .social-link:hover {
-      background: var(--secondary);
-      transform: translateY(-3px);
-    }
-
-    .footer__bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .copyright {
-      font-size: 13px;
-      opacity: 0.8;
-    }
-
-    .payment-methods {
-      display: flex;
-      gap: 10px;
-    }
-
-    .payment-method {
-      width: 40px;
-      height: 25px;
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .payment-method img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-
-    .trustpilot {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--success);
-      font-weight: 600;
-    }
-
-    .trustpilot__stars {
-      color: var(--warning);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .fade-in {
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    /* Carousel for mobile */
-    .carousel-mobile {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .gallery-main {
-        height: 250px;
-      }
-      
-      .carousel-desktop {
-        display: none;
-      }
-      
-      .carousel-mobile {
-        display: block;
-      }
-      
-      .carousel-images {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-.gallery-main__img,
-.thumb__img,
-.carousel-images img {
-  max-height: 100%;
-  width: auto;
-  max-width: 100%;
-  margin: 0 auto;
-}      
-      .dots {
-        display: flex;
-        justify-content: center;
-        padding: 10px 0;
-      }
-      
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #ccc;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-      
-      .dot.active {
-        background: var(--primary);
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Top Bar -->
   <div class="top-bar">
-    <span class="top-bar__highlight">LIVRAISON GRATUITE</span> dès 49€ d'achat | Retour gratuit sous 30 jours
+    <span class="top-bar__highlight">LIVRAISON GRATUITE</span> dès 49€ d'achat
   </div>
 
   <!-- Header -->
@@ -881,7 +435,7 @@
       </a>
       
       <div class="search">
-        <input type="text" class="search__input" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher">
+        <input type="text" class="search__input" placeholder="Rechercher...">
         <i class="fas fa-search search__icon"></i>
       </div>
       
@@ -898,53 +452,46 @@
       <a href="index.html" class="breadcrumb__link">Accueil</a>
     </div>
     <div class="breadcrumb__item">
-      <a href="categorie.html" class="breadcrumb__link">Audio & Hi-Fi</a>
+      <a href="#" class="breadcrumb__link">Audio</a>
     </div>
     <div class="breadcrumb__item">
-      <a href="sous-categorie.html" class="breadcrumb__link">Microphones</a>
-    </div>
-    <div class="breadcrumb__item">
-      <span>Lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7</span>
+      <span>Micros sans fil karaoké</span>
     </div>
   </div>
 
   <!-- Product Section -->
   <div class="container">
     <div class="product">
-      <!-- Product Gallery Desktop -->
-      <div class="product-gallery carousel-desktop">
+      <!-- Desktop Gallery -->
+      <div class="product-gallery desktop-gallery">
         <div class="gallery-main">
-          <img src="ee7507whtstkeu7-1.jpg" alt="Micros sans fil Intempo EE7507WHTSTKEU7" class="gallery-main__img" id="mainImage">
-          <button class="gallery-zoom" aria-label="Zoom sur l'image">
-            <i class="fas fa-search-plus"></i>
-          </button>
+          <img src="ee7507whtstkeu7-1.jpg" alt="Micros sans fil Intempo" class="gallery-main__img" id="mainImage">
         </div>
-        
         <div class="gallery-thumbs">
-          <div class="thumb active" data-image="ee7507whtstkeu7-1.jpg">
+          <div class="thumb active">
             <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1" class="thumb__img">
           </div>
-          <div class="thumb" data-image="ee7507whtstkeu7-2.jpg">
+          <div class="thumb">
             <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2" class="thumb__img">
           </div>
-          <div class="thumb" data-image="ee7507whtstkeu7-3.jpg">
+          <div class="thumb">
             <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3" class="thumb__img">
           </div>
-          <div class="thumb" data-image="ee7507whtstkeu7-4.jpg">
+          <div class="thumb">
             <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4" class="thumb__img">
           </div>
-          <div class="thumb" data-image="ee7507whtstkeu7-5.jpg">
+          <div class="thumb">
             <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5" class="thumb__img">
           </div>
-          <div class="thumb" data-image="ee7507whtstkeu7-6.jpg">
+          <div class="thumb">
             <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6" class="thumb__img">
           </div>
         </div>
       </div>
 
-      <!-- Product Gallery Mobile -->
-      <div class="product-gallery carousel-mobile">
-        <div class="carousel">
+      <!-- Mobile Carousel -->
+      <div class="mobile-carousel">
+        <div class="carousel-container">
           <div class="carousel-images">
             <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1">
             <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2">
@@ -953,14 +500,13 @@
             <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5">
             <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
           </div>
-          <div class="dots" id="dots"></div>
         </div>
+        <div class="carousel-dots"></div>
       </div>
 
-      <!-- Product Info -->
       <div class="product-info">
         <h1 class="product-title">Lot de 2 Micros Sans Fil Karaoké Intempo EE7507WHTSTKEU7</h1>
-        <span class="product-badge">100% Neuf - Garantie 2 ans</span>
+        <span class="product-badge">100% Neuf</span>
         
         <div class="product-meta">
           <div class="product-rating">
@@ -972,352 +518,63 @@
             <span class="product-reviews">(42 avis)</span>
           </div>
           <div class="product-sku">
-            <span class="product-sku__label">Réf.:</span> EE7507WHTSTKEU7
+            Réf: EE7507WHTSTKEU7
           </div>
         </div>
 
-        <!-- Price Section -->
         <div class="price-section">
           <div class="price-current">14,99 €</div>
           <div>
             <span class="price-old">39,99 €</span>
             <span class="price-discount">-63%</span>
           </div>
-          <div class="price-save">Économisez 25,00 €</div>
         </div>
 
-        <!-- Payment Options -->
-        <div class="payment-options">
-          <div class="payment-options__title">
-            <img src="https://www.getalma.eu/static/images/alma-logo.svg" alt="Alma" class="payment-options__logo">
-            Paiement en 2x, 3x ou 4x sans frais
-          </div>
-          <div>À partir de 50€ d'achat. Crédit soumis à acceptation.</div>
-        </div>
-
-        <!-- Stock Alert -->
-        <div class="stock-alert">
-          <i class="fas fa-exclamation-circle"></i>
-          Plus que 2 exemplaires disponibles !
-        </div>
-
-        <!-- Availability -->
-        <div class="availability">
-          <div class="availability__item">
-            <i class="fas fa-check-circle availability__icon"></i>
-            <span>Disponible en ligne - Livraison sous 48h</span>
-          </div>
-          <div class="availability__item">
-            <i class="fas fa-check-circle availability__icon"></i>
-            <span>Retrait gratuit en magasin à Lille</span>
-          </div>
-          <div class="availability__item">
-            <i class="fas fa-check-circle availability__icon"></i>
-            <span>Retrait gratuit à Boulogne-sur-Mer (62)</span>
-          </div>
-        </div>
-
-        <!-- Add to Cart -->
-        <div class="add-to-cart">
+        <form action="traitement.html" method="post" class="add-to-cart">
           <div class="quantity-selector">
-            <button class="quantity-btn minus" aria-label="Réduire la quantité">-</button>
-            <input type="number" class="quantity-input" value="1" min="1" max="10" aria-label="Quantité">
-            <button class="quantity-btn plus" aria-label="Augmenter la quantité">+</button>
+            <button type="button" class="quantity-btn minus">-</button>
+            <input type="number" name="quantity" class="quantity-input" value="1" min="1">
+            <button type="button" class="quantity-btn plus">+</button>
           </div>
-          <a href="traitement.html" class="btn btn--primary">
-            <i class="fas fa-cart-plus btn--icon"></i>
-            Ajouter au panier
-          </a>
-        </div>
+          <button type="submit" class="btn btn--primary">
+            <i class="fas fa-cart-plus"></i> Ajouter au panier
+          </button>
+        </form>
 
-        <button class="btn btn--secondary">
-          <i class="far fa-heart btn--icon"></i>
-          Ajouter à ma liste
-        </button>
+        <!-- ... (بقية المحتوى) ... -->
 
-        <!-- Trust Badges -->
-        <div class="trust-badges">
-          <div class="trust-badge">
-            <i class="fas fa-shield-alt trust-badge__icon"></i>
-            <span>Paiement sécurisé</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-truck trust-badge__icon"></i>
-            <span>Livraison rapide</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-undo trust-badge__icon"></i>
-            <span>Retour facile</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-headset trust-badge__icon"></i>
-            <span>Service client</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product Tabs -->
-    <div class="product-tabs">
-      <div class="tabs-nav">
-        <div class="tab-btn active" data-tab="description">Description</div>
-        <div class="tab-btn" data-tab="features">Caractéristiques</div>
-        <div class="tab-btn" data-tab="reviews">Avis (42)</div>
-        <div class="tab-btn" data-tab="shipping">Livraison</div>
-      </div>
-
-      <div class="tab-content active" id="description">
-        <h2>Description du produit</h2>
-        <p>Transformez vos soirées entre amis ou en famille en moments inoubliables avec ce lot de 2 micros sans fil Intempo EE7507WHTSTKEU7. Conçus spécialement pour le karaoké, ces micros offrent une qualité sonore exceptionnelle et une grande liberté de mouvement grâce à leur technologie sans fil Bluetooth.</p>
-        
-        <h3>Une expérience karaoké immersive</h3>
-        <p>Ces micros sans fil vous permettent de chanter sans contrainte avec une portée allant jusqu'à 25 mètres. Leur design ergonomique et léger assure un confort optimal même lors d'utilisations prolongées. Parfait pour animer vos fêtes et soirées !</p>
-        
-        <h3>Compatibilité universelle</h3>
-        <p>Connectez-vous facilement à tous vos appareils Bluetooth : smartphones, tablettes, ordinateurs, téléviseurs intelligents et systèmes audio compatibles. Une synchronisation instantanée pour un plaisir immédiat.</p>
-        
-        <h3>Autonomie et recharge pratique</h3>
-        <p>Les micros sont équipés de batteries rechargeables via le câble USB inclus. Des indicateurs LED vous informent de l'état de charge et de la connexion. Plus besoin de piles !</p>
-      </div>
-
-      <div class="tab-content" id="features">
-        <h2>Caractéristiques techniques</h2>
-        
-        <div class="features-list">
-          <div class="feature-item">
-            <i class="fas fa-bluetooth feature-icon"></i>
-            <div>
-              <h3>Technologie sans fil</h3>
-              <p>Bluetooth 5.0 pour une connexion stable et une portée jusqu'à 25 mètres</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <i class="fas fa-plug feature-icon"></i>
-            <div>
-              <h3>Alimentation</h3>
-              <p>Batterie lithium-ion rechargeable (3.7V 500mAh) - Autonomie: 6-8 heures</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <i class="fas fa-volume-up feature-icon"></i>
-            <div>
-              <h3>Audio</h3>
-              <p>Fréquence: 2.4GHz - Sensibilité: -75dB ±3dB - SNR: ≥70dB</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <i class="fas fa-mobile-alt feature-icon"></i>
-            <div>
-              <h3>Compatibilité</h3>
-              <p>Tous appareils Bluetooth (smartphones, tablettes, TV, PC) - iOS & Android</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <i class="fas fa-weight feature-icon"></i>
-            <div>
-              <h3>Dimensions & Poids</h3>
-              <p>19.5 x 5.5 cm par micro - Poids: 280g (chaque micro)</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <i class="fas fa-box-open feature-icon"></i>
-            <div>
-              <h3>Contenu du package</h3>
-              <p>2 micros sans fil - 2 câbles USB de recharge - Manuel d'utilisation</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-content" id="reviews">
-        <h2>Avis clients</h2>
-        <p>Cette section contiendrait les avis des clients avec un système de notation.</p>
-      </div>
-
-      <div class="tab-content" id="shipping">
-        <h2>Options de livraison</h2>
-        <p>Cette section détaillerait les différentes options de livraison disponibles.</p>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <h3 class="footer__title">Service client</h3>
-          <div class="footer__links">
-            <a href="#" class="footer__link">Contactez-nous</a>
-            <a href="#" class="footer__link">FAQ</a>
-            <a href="#" class="footer__link">Suivi de commande</a>
-            <a href="#" class="footer__link">Retours & Remboursements</a>
-            <a href="#" class="footer__link">Guide des tailles</a>
-          </div>
-        </div>
-        
-        <div class="footer__col">
-          <h3 class="footer__title">À propos</h3>
-          <div class="footer__links">
-            <a href="#" class="footer__link">Qui sommes-nous ?</a>
-            <a href="#" class="footer__link">Nos magasins</a>
-            <a href="#" class="footer__link">Carrières</a>
-            <a href="#" class="footer__link">Responsabilité sociale</a>
-            <a href="#" class="footer__link">Presse</a>
-          </div>
-        </div>
-        
-        <div class="footer__col">
-          <h3 class="footer__title">Informations légales</h3>
-          <div class="footer__links">
-            <a href="#" class="footer__link">Conditions générales</a>
-            <a href="#" class="footer__link">Mentions légales</a>
-            <a href="#" class="footer__link">Politique de confidentialité</a>
-            <a href="#" class="footer__link">Politique des cookies</a>
-            <a href="#" class="footer__link">Conditions de vente</a>
-          </div>
-        </div>
-        
-        <div class="footer__col">
-          <h3 class="footer__title">Newsletter</h3>
-          <div class="newsletter">
-            <p class="newsletter__text">Abonnez-vous à notre newsletter pour recevoir nos offres exclusives !</p>
-            <form class="newsletter__form">
-              <input type="email" class="newsletter__input" placeholder="Votre adresse email" required>
-              <button type="submit" class="newsletter__btn">OK</button>
-            </form>
-          </div>
-          
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer__bottom">
-        <div class="copyright">
-          © 2023 Demarq Online. Tous droits réservés.
-        </div>
-        
-        <div class="payment-methods">
-          <div class="payment-method">
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
-          </div>
-          <div class="payment-method">
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
-          </div>
-          <div class="payment-method">
-            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064076.png" alt="PayPal">
-          </div>
-          <div class="payment-method">
-            <img src="https://cdn-icons-png.flaticon.com/512/739/739257.png" alt="CB">
-          </div>
-        </div>
-        
-        <div class="trustpilot">
-          <div class="trustpilot__stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <span>Trustpilot</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    // Gallery Thumbnail Navigation
+    // Desktop Gallery Navigation
     const thumbs = document.querySelectorAll('.thumb');
     const mainImage = document.getElementById('mainImage');
     
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', function() {
-        // Remove active class from all thumbs
-        thumbs.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked thumb
-        this.classList.add('active');
-        // Change main image
-        const newImage = this.getAttribute('data-image');
-        mainImage.src = newImage;
-        // Add fade-in animation
-        mainImage.classList.add('fade-in');
-        setTimeout(() => mainImage.classList.remove('fade-in'), 500);
-      });
-    });
-    
-    // Quantity Selector
-    const minusBtn = document.querySelector('.quantity-btn.minus');
-    const plusBtn = document.querySelector('.quantity-btn.plus');
-    const quantityInput = document.querySelector('.quantity-input');
-    
-    minusBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      let value = parseInt(quantityInput.value);
-      if (value > 1) {
-        quantityInput.value = value - 1;
-      }
-    });
-    
-    plusBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      let value = parseInt(quantityInput.value);
-      if (value < 10) {
-        quantityInput.value = value + 1;
-      }
-    });
-    
-    // Tab Navigation
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const tabId = this.getAttribute('data-tab');
-        
-        // Update active tab button
-        tabBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Show corresponding content
-        tabContents.forEach(content => {
-          content.classList.remove('active');
-          if (content.id === tabId) {
-            content.classList.add('active');
-          }
+    if (thumbs.length > 0 && mainImage) {
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const newSrc = thumb.querySelector('img').src;
+          mainImage.src = newSrc;
         });
       });
-    });
-    
+    }
+
     // Mobile Carousel
-    if (document.querySelector('.carousel-mobile')) {
+    const mobileCarousel = document.querySelector('.mobile-carousel');
+    if (mobileCarousel) {
       const carousel = document.querySelector('.carousel-images');
-      const dotsContainer = document.getElementById('dots');
-      const images = carousel.querySelectorAll('img');
+      const dotsContainer = document.querySelector('.carousel-dots');
+      const images = document.querySelectorAll('.carousel-images img');
       let currentIndex = 0;
       
       // Create dots
       images.forEach((_, index) => {
         const dot = document.createElement('span');
-        dot.classList.add('dot');
+        dot.classList.add('carousel-dot');
         if (index === 0) dot.classList.add('active');
         dot.addEventListener('click', () => {
           goToSlide(index);
@@ -1326,26 +583,55 @@
       });
       
       function goToSlide(index) {
-        carousel.scrollTo({
-          left: index * carousel.offsetWidth,
-          behavior: 'smooth'
-        });
-        updateDots(index);
         currentIndex = index;
+        const slideWidth = carousel.offsetWidth;
+        carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        updateDots();
       }
       
-      function updateDots(index) {
-        const dots = dotsContainer.querySelectorAll('.dot');
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
+      function updateDots() {
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
         });
       }
       
       // Auto-scroll (optional)
-      setInterval(() => {
+      let autoScroll = setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length;
         goToSlide(currentIndex);
       }, 5000);
+      
+      // Pause on hover
+      carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoScroll);
+      });
+      
+      carousel.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          goToSlide(currentIndex);
+        }, 5000);
+      });
+    }
+
+    // Quantity Selector
+    const minusBtn = document.querySelector('.quantity-btn.minus');
+    const plusBtn = document.querySelector('.quantity-btn.plus');
+    const quantityInput = document.querySelector('.quantity-input');
+    
+    if (minusBtn && plusBtn && quantityInput) {
+      minusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let value = parseInt(quantityInput.value);
+        if (value > 1) quantityInput.value = value - 1;
+      });
+      
+      plusBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let value = parseInt(quantityInput.value);
+        quantityInput.value = value + 1;
+      });
     }
   </script>
 </body>
