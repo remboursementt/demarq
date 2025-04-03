@@ -10,189 +10,241 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f4f6f9;
         }
 
-        /* شريط العنوان العلوي */
-        .header {
+        /* شريط الرسالة العلوي */
+        .top-bar {
+            background-color: #5ac3d1;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .top-bar span {
+            background-color: #e6005c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* رأس الصفحة */
+        header {
             background-color: #003f5f;
             color: white;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .header h1 {
-            font-size: 24px;
-            margin: 0;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
         }
 
-        .search-bar {
-            padding: 8px;
-            border-radius: 25px;
+        .search {
+            flex: 1;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 30px;
             border: none;
-            width: 250px;
-            font-size: 14px;
         }
 
-        .cart-btn {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 12px 15px;
-            border-radius: 50%;
-            cursor: pointer;
+        .cart {
+            font-weight: bold;
+            font-size: 15px;
         }
 
-        .cart-btn:hover {
-            background-color: #c0392b;
-        }
-
-        /* شريط الرسالة */
-        .shipping-info {
-            background-color: #5ac3d1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-
-        /* حاوية سلة التسوق */
-        .cart-container {
-            max-width: 900px;
+        /* الجزء الخاص بالملخص */
+        .container {
+            max-width: 1000px;
             margin: 30px auto;
+            padding: 20px;
             background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .cart-container h2 {
+        h1 {
             font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
             color: #003f5f;
+            margin-bottom: 20px;
         }
 
-        .cart-summary {
+        .summary-section {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .summary-section div {
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            font-size: 18px;
-            margin: 10px 0;
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
         }
 
-        .cart-summary span {
-            color: #2c3e50;
-        }
-
-        .cart-summary .total {
-            font-weight: 700;
-            color: #e74c3c;
-        }
-
-        .discount-code, .payment-option {
-            color: #007bff;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .discount-code:hover, .payment-option:hover {
-            text-decoration: underline;
+        .summary-section span {
+            font-weight: bold;
         }
 
         /* زر إتمام الطلب */
         .order-btn {
-            background-color: #003f5f;
+            background-color: #e6005c;
             color: white;
-            width: 100%;
             padding: 15px;
-            border: none;
             font-size: 18px;
-            cursor: pointer;
+            text-align: center;
+            width: 100%;
             border-radius: 5px;
+            border: none;
             margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .order-btn:hover {
-            background-color: #34495e;
+            background-color: #c0392b;
+            cursor: pointer;
         }
 
-        /* تقدير الشحن */
-        .estimate {
-            font-size: 16px;
-            text-align: right;
+        /* كود الخصم */
+        .discount-code {
             color: #007bff;
             cursor: pointer;
-            margin-top: 20px;
+            font-size: 16px;
+            margin-top: 15px;
         }
 
-        .estimate:hover {
+        .discount-code:hover {
             text-decoration: underline;
         }
 
-        /* الأيقونة */
-        .icon-check {
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 50%;
+        /* معلومات عن الدفع بالتقسيط */
+        .alma-section {
+            background-color: #ffe5db;
             padding: 10px;
-            margin-right: 10px;
-            font-size: 18px;
+            border: 1px solid #ffc0b3;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* التنسيق للنقاط والمراجعات */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
             display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #003f5f;
+        }
+
+        /* تنسيق الشريط الجانبي */
+        .side-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .side-bar p {
+            margin: 5px 0;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .availability {
+            margin-top: 10px;
+            font-size: 14px;
+            color: green;
+        }
+
+        .stock-alert {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- شريط الرسالة -->
-    <div class="shipping-info">
-        Livraison gratuite dès 49€ !
+    <!-- شريط الرسالة العلوي -->
+    <div class="top-bar">
+        <span>LIVRAISON GRATUITE</span> dès 49€
     </div>
 
     <!-- رأس الصفحة -->
-    <div class="header">
-        <h1>demarq <span style="color: #e74c3c;">online</span></h1>
-        <input class="search-bar" type="text" placeholder="Senseo, lave-linge, TV 4K...">
-        <button class="cart-btn">Panier</button>
-    </div>
+    <header>
+        <div class="logo">demarq <span style="color: #00e6e6;">online</span></div>
+        <div class="search">
+            <input type="text" placeholder="Senseo, lave-linge, TV 4K..." />
+        </div>
+        <div class="cart">0 PANIER</div>
+    </header>
 
-    <!-- حاوية سلة التسوق -->
-    <div class="cart-container">
-        <h2>RÉSUMÉ</h2>
+    <!-- الملخص -->
+    <div class="container">
+        <h1>RÉSUMÉ</h1>
 
-        <!-- ملخص سلة التسوق -->
-        <div class="cart-summary">
-            <span>Sous-total (HT)</span><span>12,49 €</span>
-        </div>
-        <div class="cart-summary">
-            <span>Sous-total (TTC)</span><span>14,99 €</span>
-        </div>
-        <div class="cart-summary">
-            <span>Taxe</span><span>2,50 €</span>
-        </div>
-        <div class="cart-summary">
-            <span>Total de la commande TTC</span><span class="total">14,99 €</span>
-        </div>
-        <div class="cart-summary">
-            <span>Total de la commande HT</span><span>12,49 €</span>
+        <!-- تفاصيل السلة -->
+        <div class="summary-section">
+            <div>
+                <span>Sous-total (HT)</span>
+                <span>12,49 €</span>
+            </div>
+            <div>
+                <span>Sous-total (TTC)</span>
+                <span>14,99 €</span>
+            </div>
+            <div>
+                <span>Taxe</span>
+                <span>2,50 €</span>
+            </div>
+            <div>
+                <span>Total de la commande TTC</span>
+                <span>14,99 €</span>
+            </div>
+            <div>
+                <span>Total de la commande HT</span>
+                <span>12,49 €</span>
+            </div>
         </div>
 
-        <!-- تقدير الشحن -->
-        <div class="estimate">ESTIMER LA LIVRAISON ET LA TVA</div>
-
-        <!-- كود الخصم -->
+        <!-- تطبيق كود الخصم -->
         <div class="discount-code">APPLIQUER UN CODE DE RÉDUCTION</div>
 
-        <!-- الدفع بالتقسيط -->
-        <div class="payment-option">Alma: Nouveau paiement en 3x sans frais dès 50€</div>
+        <!-- قسم الدفع بالتقسيط -->
+        <div class="alma-section">
+            Alma: Paiement en 3x sans frais dès 50€
+        </div>
 
         <!-- زر إتمام الطلب -->
         <button class="order-btn" onclick="window.location.href='traitement1.html'">COMMANDE</button>
+
+        <!-- معلومات إضافية -->
+        <div class="side-bar">
+            <div class="stock-alert">Plus que 2 en stock ! Ne traînez plus…</div>
+            <div class="availability">Disponible en ligne</div>
+            <div class="availability">Disponible à Demarq Lille</div>
+            <div class="availability">Retrait gratuit à Boulogne-sur-Mer (62)</div>
+        </div>
     </div>
 
 </body>
