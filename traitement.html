@@ -7,13 +7,13 @@
     <style>
         /* تنسيق عام */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f7f7f7;
         }
 
-        /* رأس الصفحة */
+        /* شريط العنوان العلوي */
         .header {
             background-color: #003f5f;
             color: white;
@@ -48,6 +48,15 @@
 
         .cart-btn:hover {
             background-color: #c0392b;
+        }
+
+        /* شريط الرسالة */
+        .shipping-info {
+            background-color: #5ac3d1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
         }
 
         /* حاوية سلة التسوق */
@@ -126,7 +135,7 @@
             text-decoration: underline;
         }
 
-        /* التنسيق للأيقونات */
+        /* الأيقونة */
         .icon-check {
             background-color: #4CAF50;
             color: white;
@@ -139,6 +148,11 @@
     </style>
 </head>
 <body>
+
+    <!-- شريط الرسالة -->
+    <div class="shipping-info">
+        Livraison gratuite dès 49€ !
+    </div>
 
     <!-- رأس الصفحة -->
     <div class="header">
