@@ -1,427 +1,1128 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lot de 2 Micros Sans Fil - Demarq</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Achetez le lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7 au meilleur prix sur Demarq Online. Livraison gratuite dès 49€ d'achat.">
+  <title>Lot de 2 Micros Sans Fil Karaoké Intempo EE7507WHTSTKEU7 | Demarq Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #002640;
+      --secondary: #e6005c;
+      --accent: #00c853;
+      --light-blue: #b3e6f7;
+      --light-pink: #fff0f5;
+      --light-orange: #ffe5db;
+      --border-orange: #ffc0b3;
+      --text-dark: #222;
+      --text-medium: #555;
+      --text-light: #777;
+      --bg-light: #f6f7f9;
+      --white: #fff;
+      --success: #00e676;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 30px;
+      --transition: all 0.3s ease;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      background: #f9f9f9;
-      color: #333;
-      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
     }
 
     /* Top Bar */
     .top-bar {
-      background: #b3e6f7;
-      padding: 12px;
+      background: var(--light-blue);
+      padding: 10px 0;
       text-align: center;
       font-size: 14px;
+      font-weight: 500;
     }
 
-    .top-bar span {
-      background: #e6005c;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-weight: bold;
+    .top-bar__highlight {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      margin-right: 5px;
     }
 
     /* Header */
-    header {
-      background: #002640;
-      color: white;
-      padding: 25px 30px;
+    .header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header__content {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo__highlight {
       color: #00e6e6;
-      text-transform: uppercase;
+      margin-left: 5px;
     }
 
     .search {
       flex: 1;
-      margin: 0 30px;
+      max-width: 600px;
       position: relative;
     }
 
-    .search input {
+    .search__input {
       width: 100%;
-      padding: 15px 20px;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 12px 20px;
+      padding-right: 45px;
+      border-radius: var(--radius-xl);
+      border: none;
+      font-size: 14px;
+      transition: var(--transition);
     }
 
-    .search::after {
-      content: '🔍';
+    .search__input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--secondary);
+    }
+
+    .search__icon {
       position: absolute;
       right: 20px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 20px;
-      color: #00e6e6;
+      color: var(--text-medium);
     }
 
     .cart {
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+    }
+
+    .cart:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cart__icon {
       font-size: 18px;
     }
 
     /* Breadcrumb */
     .breadcrumb {
-      font-size: 14px;
-      color: #555;
-      margin: 20px 30px;
+      padding: 15px 0;
+      font-size: 13px;
+      color: var(--text-medium);
     }
 
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      font-size: 28px;
-      color: #002640;
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
-
-    /* Carousel */
-    .carousel {
-      width: 100%;
-      height: 500px;
-      margin-bottom: 30px;
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-images img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      margin: 0 5px;
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .dot {
-      height: 12px;
-      width: 12px;
-      background-color: #ccc;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .dot.active {
-      background-color: #002640;
-    }
-
-    /* Section */
-    .section {
-      margin-top: 20px;
-    }
-
-    h2 {
-      color: #002640;
-      font-size: 22px;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: none;
-    }
-
-    ul li {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    /* Price box */
-    .price-box {
-      display: flex;
-      justify-content: space-between;
+    .breadcrumb__item {
+      display: inline-flex;
       align-items: center;
-      background: #fff0f5;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 25px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .price {
-      font-size: 36px;
-      font-weight: bold;
-      color: #e6005c;
+    .breadcrumb__item:not(:last-child)::after {
+      content: '›';
+      margin: 0 8px;
+      color: var(--text-light);
     }
 
-    .discount {
-      background: #005fa3;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 4px;
-      font-size: 16px;
+    .breadcrumb__link {
+      color: var(--text-medium);
+      transition: var(--transition);
     }
 
-    /* Alma Box */
-    .alma-box {
-      background: #ffe5db;
-      padding: 20px;
-      border: 1px solid #ffc0b3;
-      margin: 25px 0;
-      font-size: 16px;
-      color: #555;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    .breadcrumb__link:hover {
+      color: var(--secondary);
     }
 
-    .stock {
-      color: red;
-      font-weight: bold;
-      margin: 20px 0;
-      font-size: 16px;
+    /* Product Section */
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 30px 0;
     }
 
-    .availability {
-      font-size: 16px;
+    @media (max-width: 768px) {
+      .product {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Product Gallery */
+    .product-gallery {
+      position: relative;
+    }
+
+    .gallery-main {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .gallery-main__img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+
+    .thumb {
+      height: 70px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .thumb:hover, .thumb.active {
+      border-color: var(--secondary);
+    }
+
+    .thumb__img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .gallery-zoom {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    /* Product Info */
+    .product-info {
+      position: relative;
+    }
+
+    .product-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .product-badge {
+      background: var(--accent);
+      color: var(--white);
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 15px;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
       margin-bottom: 20px;
     }
 
-    .availability span {
-      display: block;
-      color: green;
-      margin-top: 5px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #00c853;
-      color: white;
-      padding: 18px 35px;
-      font-size: 18px;
-      border-radius: 50px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #388e3c;
-    }
-
-    /* Footer */
-    footer {
-      background: #002640;
-      color: white;
-      padding: 40px 20px;
-      margin-top: 50px;
-      font-size: 16px;
-    }
-
-    .footer-links {
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--warning);
       font-size: 14px;
     }
 
-    .footer-links a:hover {
-      text-decoration: underline;
+    .product-reviews {
+      color: var(--text-light);
+      font-size: 13px;
     }
 
-    .trust {
-      color: #00e676;
+    .product-sku {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .product-sku__label {
+      font-weight: 500;
+      color: var(--text-medium);
+    }
+
+    /* Price Section */
+    .price-section {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .price-current {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 5px;
+    }
+
+    .price-old {
+      font-size: 18px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-right: 10px;
+    }
+
+    .price-discount {
+      background: var(--primary);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .price-save {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    /* Payment Options */
+    .payment-options {
+      background: var(--light-orange);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--radius-md);
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .payment-options__title {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .payment-options__logo {
+      height: 20px;
+    }
+
+    /* Stock Alert */
+    .stock-alert {
+      color: var(--danger);
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Availability */
+    .availability {
+      margin-bottom: 25px;
+    }
+
+    .availability__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .availability__icon {
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    /* Add to Cart */
+    .add-to-cart {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .quantity-btn {
+      width: 40px;
+      height: 40px;
+      background: #f5f5f5;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quantity-input {
+      width: 50px;
+      height: 40px;
+      border: none;
       text-align: center;
-      margin-top: 20px;
+      font-weight: 500;
+      -moz-appearance: textfield;
+    }
+
+    .quantity-input::-webkit-outer-spin-button,
+    .quantity-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 25px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--white);
+      flex: 1;
+    }
+
+    .btn--primary:hover {
+      background: #00b247;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn--secondary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn--secondary:hover {
+      background: #001a33;
+    }
+
+    .btn--icon {
+      margin-right: 8px;
+    }
+
+    /* Product Tabs */
+    .product-tabs {
+      margin-top: 40px;
+    }
+
+    .tabs-nav {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      padding: 12px 20px;
+      font-weight: 600;
+      color: var(--text-medium);
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .tab-btn:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--secondary);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      color: var(--secondary);
+    }
+
+    .tab-btn.active:after {
+      transform: scaleX(1);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 10px;
+    }
+
+    .feature-icon {
+      color: var(--accent);
+      font-size: 18px;
+      margin-top: 3px;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-medium);
+    }
+
+    .trust-badge__icon {
+      color: var(--success);
       font-size: 18px;
     }
 
-    /* Responsive Design */
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 50px 0 30px;
+      margin-top: 50px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer__title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer__title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer__link {
+      color: rgba(255, 255, 255, 0.8);
+      transition: var(--transition);
+      font-size: 14px;
+    }
+
+    .footer__link:hover {
+      color: var(--white);
+      padding-left: 5px;
+    }
+
+    .newsletter {
+      margin-bottom: 20px;
+    }
+
+    .newsletter__text {
+      margin-bottom: 15px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .newsletter__form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter__input {
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: var(--radius-sm);
+      border: none;
+      font-size: 14px;
+    }
+
+    .newsletter__btn {
+      background: var(--secondary);
+      color: var(--white);
+      border: none;
+      padding: 0 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter__btn:hover {
+      background: #c5004e;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .copyright {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 10px;
+    }
+
+    .payment-method {
+      width: 40px;
+      height: 25px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .payment-method img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .trustpilot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .trustpilot__stars {
+      color: var(--warning);
+    }
+
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
-      .price-box {
+      .header__content {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 15px;
       }
-
-      .carousel {
-        height: 350px;
+      
+      .search {
+        width: 100%;
       }
-
-      .carousel-images img {
-        object-fit: contain;
+      
+      .product-title {
+        font-size: 20px;
       }
-
-      .search input {
-        padding: 12px;
+      
+      .price-current {
+        font-size: 28px;
       }
-
-      .footer-links {
+      
+      .add-to-cart {
         flex-direction: column;
-        text-align: center;
       }
+      
+      .quantity-selector {
+        justify-content: center;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
     }
   </style>
 </head>
 <body>
-
+  <!-- Top Bar -->
   <div class="top-bar">
-    <span>LIVRAISON GRATUITE</span> dès 49€
+    <span class="top-bar__highlight">LIVRAISON GRATUITE</span> dès 49€ d'achat | Retour gratuit sous 30 jours
   </div>
 
-  <header>
-    <div class="logo">demarq <span style="color: #00e6e6;">online</span></div>
-    <div class="search">
-      <input type="text" placeholder="Senseo, lave-linge, TV 4K..." />
-    </div>
-    <div class="cart">0 PANIER</div>
-  </header>
-
-  <div class="breadcrumb">
-    Accueil > Lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7
-  </div>
-
-  <div class="container">
-    <h1>LOT DE 2 MICROS SANS FIL KARAOKÉ INTEMPO EE7507WHTSTKEU7</h1>
-
-    <div class="badge">100% neuf !</div>
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1">
-        <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2">
-        <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3">
-        <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4">
-        <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5">
-        <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6">
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__content">
+      <a href="index.html" class="logo">
+        demarq<span class="logo__highlight">online</span>
+      </a>
+      
+      <div class="search">
+        <input type="text" class="search__input" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher">
+        <i class="fas fa-search search__icon"></i>
+      </div>
+      
+      <div class="cart">
+        <i class="fas fa-shopping-cart cart__icon"></i>
+        <span>Panier (0)</span>
       </div>
     </div>
-    <div class="dots" id="dots"></div>
+  </header>
 
-    <div class="section">
-      <h2>RÉSUMÉ</h2>
-      <ul>
-        <li>Lot de 2 micros sans fil</li>
-        <li>Technologie Bluetooth</li>
-        <li>Compatible avec appareils Bluetooth</li>
-        <li>Rechargeable par USB</li>
-        <li>Portée jusqu'à 25 m sans fil</li>
-      </ul>
+  <!-- Breadcrumb -->
+  <div class="container breadcrumb">
+    <div class="breadcrumb__item">
+      <a href="index.html" class="breadcrumb__link">Accueil</a>
     </div>
-
-    <div class="section info">
-      <h2>INFORMATIONS</h2>
-      <p><strong>Référence :</strong> EE7507WHTSTKEU7</p>
-      <p><strong>Marque :</strong> Intempo</p>
-      <p><strong>Origine :</strong> Neuf</p>
-      <p><strong>Garantie :</strong> 2 ans</p>
+    <div class="breadcrumb__item">
+      <a href="categorie.html" class="breadcrumb__link">Audio & Hi-Fi</a>
     </div>
-
-    <div class="price-box">
-      <div class="price">14,99 €</div>
-      <div class="discount">63% d’économie*</div>
+    <div class="breadcrumb__item">
+      <a href="sous-categorie.html" class="breadcrumb__link">Microphones</a>
     </div>
-
-    <div class="alma-box">
-      Alma – Paiement en 2x, 3x, 4x à partir de 50 €
-    </div>
-
-    <div class="stock">
-      Plus que 2 en stock ! Ne traînez plus…
-    </div>
-
-    <div class="availability">
-      <span>Disponible en ligne</span>
-      <span>Disponible à Demarq Lille</span>
-      <span>Retrait gratuit à Boulogne-sur-Mer (62)</span>
-    </div>
-
-    <a href="traitement.html" class="btn">Ajouter au panier</a>
-
-    <div class="description-box">
-      <h2>DESCRIPTION</h2>
-      <p>Profitez de vos soirées karaoké avec ce <strong>lot de 2 micros sans fil Bluetooth</strong> Intempo, offrant une excellente portée et une grande compatibilité.</p>
+    <div class="breadcrumb__item">
+      <span>Lot de 2 micros sans fil karaoké Intempo EE7507WHTSTKEU7</span>
     </div>
   </div>
 
-  <footer>
-    <div class="newsletter">
-      RECEVEZ 5€ DE RÉDUCTION<br>
-      <input type="email" placeholder="Votre adresse e-mail" />
-      <button>INSCRIPTION</button>
+  <!-- Product Section -->
+  <div class="container">
+    <div class="product">
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img src="ee7507whtstkeu7-1.jpg" alt="Micros sans fil Intempo EE7507WHTSTKEU7" class="gallery-main__img" id="mainImage">
+          <button class="gallery-zoom" aria-label="Zoom sur l'image">
+            <i class="fas fa-search-plus"></i>
+          </button>
+        </div>
+        
+        <div class="gallery-thumbs">
+          <div class="thumb active" data-image="ee7507whtstkeu7-1.jpg">
+            <img src="ee7507whtstkeu7-1.jpg" alt="Micro 1" class="thumb__img">
+          </div>
+          <div class="thumb" data-image="ee7507whtstkeu7-2.jpg">
+            <img src="ee7507whtstkeu7-2.jpg" alt="Micro 2" class="thumb__img">
+          </div>
+          <div class="thumb" data-image="ee7507whtstkeu7-3.jpg">
+            <img src="ee7507whtstkeu7-3.jpg" alt="Micro 3" class="thumb__img">
+          </div>
+          <div class="thumb" data-image="ee7507whtstkeu7-4.jpg">
+            <img src="ee7507whtstkeu7-4.jpg" alt="Micro 4" class="thumb__img">
+          </div>
+          <div class="thumb" data-image="ee7507whtstkeu7-5.jpg">
+            <img src="ee7507whtstkeu7-5.jpg" alt="Micro 5" class="thumb__img">
+          </div>
+          <div class="thumb" data-image="ee7507whtstkeu7-6.jpg">
+            <img src="ee7507whtstkeu7-6.jpg" alt="Micro 6" class="thumb__img">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <h1 class="product-title">Lot de 2 Micros Sans Fil Karaoké Intempo EE7507WHTSTKEU7</h1>
+        <span class="product-badge">100% Neuf - Garantie 2 ans</span>
+        
+        <div class="product-meta">
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span class="product-reviews">(42 avis)</span>
+          </div>
+          <div class="product-sku">
+            <span class="product-sku__label">Réf.:</span> EE7507WHTSTKEU7
+          </div>
+        </div>
+
+        <!-- Price Section -->
+        <div class="price-section">
+          <div class="price-current">14,99 €</div>
+          <div>
+            <span class="price-old">39,99 €</span>
+            <span class="price-discount">-63%</span>
+          </div>
+          <div class="price-save">Économisez 25,00 €</div>
+        </div>
+
+        <!-- Payment Options -->
+        <div class="payment-options">
+          <div class="payment-options__title">
+            <img src="https://www.getalma.eu/static/images/alma-logo.svg" alt="Alma" class="payment-options__logo">
+            Paiement en 2x, 3x ou 4x sans frais
+          </div>
+          <div>À partir de 50€ d'achat. Crédit soumis à acceptation.</div>
+        </div>
+
+        <!-- Stock Alert -->
+        <div class="stock-alert">
+          <i class="fas fa-exclamation-circle"></i>
+          Plus que 2 exemplaires disponibles !
+        </div>
+
+        <!-- Availability -->
+        <div class="availability">
+          <div class="availability__item">
+            <i class="fas fa-check-circle availability__icon"></i>
+            <span>Disponible en ligne - Livraison sous 48h</span>
+          </div>
+          <div class="availability__item">
+            <i class="fas fa-check-circle availability__icon"></i>
+            <span>Retrait gratuit en magasin à Lille</span>
+          </div>
+          <div class="availability__item">
+            <i class="fas fa-check-circle availability__icon"></i>
+            <span>Retrait gratuit à Boulogne-sur-Mer (62)</span>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="add-to-cart">
+          <div class="quantity-selector">
+            <button class="quantity-btn minus" aria-label="Réduire la quantité">-</button>
+            <input type="number" class="quantity-input" value="1" min="1" max="10" aria-label="Quantité">
+            <button class="quantity-btn plus" aria-label="Augmenter la quantité">+</button>
+          </div>
+          <button class="btn btn--primary">
+            <i class="fas fa-cart-plus btn--icon"></i>
+            Ajouter au panier
+          </button>
+        </div>
+
+        <button class="btn btn--secondary">
+          <i class="far fa-heart btn--icon"></i>
+          Ajouter à ma liste
+        </button>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-shield-alt trust-badge__icon"></i>
+            <span>Paiement sécurisé</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-truck trust-badge__icon"></i>
+            <span>Livraison rapide</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-undo trust-badge__icon"></i>
+            <span>Retour facile</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-headset trust-badge__icon"></i>
+            <span>Service client</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#">Qui sommes nous ?</a>
-      <a href="#">Conditions générales</a>
-      <a href="#">Mentions légales</a>
-      <a href="#">Politique de retour</a>
+
+    <!-- Product Tabs -->
+    <div class="product-tabs">
+      <div class="tabs-nav">
+        <div class="tab-btn active" data-tab="description">Description</div>
+        <div class="tab-btn" data-tab="features">Caractéristiques</div>
+        <div class="tab-btn" data-tab="reviews">Avis (42)</div>
+        <div class="tab-btn" data-tab="shipping">Livraison</div>
+      </div>
+
+      <div class="tab-content active" id="description">
+        <h2>Description du produit</h2>
+        <p>Transformez vos soirées entre amis ou en famille en moments inoubliables avec ce lot de 2 micros sans fil Intempo EE7507WHTSTKEU7. Conçus spécialement pour le karaoké, ces micros offrent une qualité sonore exceptionnelle et une grande liberté de mouvement grâce à leur technologie sans fil Bluetooth.</p>
+        
+        <h3>Une expérience karaoké immersive</h3>
+        <p>Ces micros sans fil vous permettent de chanter sans contrainte avec une portée allant jusqu'à 25 mètres. Leur design ergonomique et léger assure un confort optimal même lors d'utilisations prolongées. Parfait pour animer vos fêtes et soirées !</p>
+        
+        <h3>Compatibilité universelle</h3>
+        <p>Connectez-vous facilement à tous vos appareils Bluetooth : smartphones, tablettes, ordinateurs, téléviseurs intelligents et systèmes audio compatibles. Une synchronisation instantanée pour un plaisir immédiat.</p>
+        
+        <h3>Autonomie et recharge pratique</h3>
+        <p>Les micros sont équipés de batteries rechargeables via le câble USB inclus. Des indicateurs LED vous informent de l'état de charge et de la connexion. Plus besoin de piles !</p>
+      </div>
+
+      <div class="tab-content" id="features">
+        <h2>Caractéristiques techniques</h2>
+        
+        <div class="features-list">
+          <div class="feature-item">
+            <i class="fas fa-bluetooth feature-icon"></i>
+            <div>
+              <h3>Technologie sans fil</h3>
+              <p>Bluetooth 5.0 pour une connexion stable et une portée jusqu'à 25 mètres</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <i class="fas fa-plug feature-icon"></i>
+            <div>
+              <h3>Alimentation</h3>
+              <p>Batterie lithium-ion rechargeable (3.7V 500mAh) - Autonomie: 6-8 heures</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <i class="fas fa-volume-up feature-icon"></i>
+            <div>
+              <h3>Audio</h3>
+              <p>Fréquence: 2.4GHz - Sensibilité: -75dB ±3dB - SNR: ≥70dB</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <i class="fas fa-mobile-alt feature-icon"></i>
+            <div>
+              <h3>Compatibilité</h3>
+              <p>Tous appareils Bluetooth (smartphones, tablettes, TV, PC) - iOS & Android</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <i class="fas fa-weight feature-icon"></i>
+            <div>
+              <h3>Dimensions & Poids</h3>
+              <p>19.5 x 5.5 cm par micro - Poids: 280g (chaque micro)</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <i class="fas fa-box-open feature-icon"></i>
+            <div>
+              <h3>Contenu du package</h3>
+              <p>2 micros sans fil - 2 câbles USB de recharge - Manuel d'utilisation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="reviews">
+        <h2>Avis clients</h2>
+        <p>Cette section contiendrait les avis des clients avec un système de notation.</p>
+      </div>
+
+      <div class="tab-content" id="shipping">
+        <h2>Options de livraison</h2>
+        <p>Cette section détaillerait les différentes options de livraison disponibles.</p>
+      </div>
     </div>
-    <div class="trust">
-      Excellent 4.6 sur 5 ★ Trustpilot
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h3 class="footer__title">Service client</h3>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Contactez-nous</a>
+            <a href="#" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link">Suivi de commande</a>
+            <a href="#" class="footer__link">Retours & Remboursements</a>
+            <a href="#" class="footer__link">Guide des tailles</a>
+          </div>
+        </div>
+        
+        <div class="footer__col">
+          <h3 class="footer__title">À propos</h3>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Qui sommes-nous ?</a>
+            <a href="#" class="footer__link">Nos magasins</a>
+            <a href="#" class="footer__link">Carrières</a>
+            <a href="#" class="footer__link">Responsabilité sociale</a>
+            <a href="#" class="footer__link">Presse</a>
+          </div>
+        </div>
+        
+  <div class="footer__bottom">
+    <div class="copyright">
+      © 2023 Demarq Online. Tous droits réservés.
     </div>
-  </footer>
-
-  <script>
-    const images = document.querySelector('.carousel-images');
-    const dots = document.getElementById("dots");
-    const total = images.children.length;
-    let current = 0;
-
-    function updateCarousel() {
-      images.style.transform = `translateX(-${current * 100}%)`;
-      [...dots.children].forEach((d, i) => d.classList.toggle("active", i === current));
-    }
-
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement("span");
-      dot.classList.add("dot");
-      dot.onclick = () => {
-        current = i;
-        updateCarousel();
-      };
-      dots.appendChild(dot);
-    }
-
-    updateCarousel();
-  </script>
-
-</body>
-</html>
+    
+    <div class="payment-methods">
+      <div class="payment-method">
+        <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+      </div>
+      <div class="payment-method">
+        <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+      </div>
+      <div class="payment-method">
+        <img src="https://cdn-icons-png.flaticon.com/512/3064/3064076.png" alt="PayPal">
+      </div>
+      <div class="payment-method">
+        <img src="https://cdn-icons-png.flaticon.com/512/739/739257.png" alt="CB">
+      </div>
+    </div>
+    
+    <div class="trustpilot">
+      <div class="trustpilot__stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <span>Trustpilot</span>
+    </div>
+  </div>
+</div>
