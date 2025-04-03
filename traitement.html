@@ -1,168 +1,166 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب الشراء</title>
+    <title>Panier - Demarq Online</title>
     <style>
         /* تنسيق عام للصفحة */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f4f4f4;
         }
 
-        /* رأس الصفحة */
+        /* شريط العنوان العلوي */
         .header {
-            background-color: #2c3e50;
+            background-color: #1d2b40;
             color: white;
-            padding: 20px 40px;
-            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* حاوية سلة التسوق */
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .search-bar {
+            border-radius: 20px;
+            padding: 10px;
+            width: 300px;
+        }
+
+        .cart-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* تنسيق سلة التسوق */
         .cart-container {
+            max-width: 800px;
+            margin: 30px auto;
             background-color: white;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .cart-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 18px;
-            color: #34495e;
-            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #1d2b40;
         }
 
-        .cart-header h2 {
-            font-size: 22px;
-            color: #e74c3c;
-        }
-
-        /* تفاصيل المنتجات في السلة */
-        .cart-items {
-            border-top: 1px solid #ddd;
-            margin-bottom: 20px;
-            padding-top: 20px;
-        }
-
-        .cart-items .item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cart-items .item .item-name {
-            font-size: 16px;
-            color: #2c3e50;
-        }
-
-        .cart-items .item .item-price {
-            font-size: 16px;
-            color: #2c3e50;
-        }
-
-        /* حسابات السلة */
         .cart-summary {
+            margin-top: 20px;
+        }
+
+        .cart-summary div {
+            font-size: 18px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            font-size: 18px;
-            padding: 10px 0;
-            border-top: 1px solid #ddd;
         }
 
         .cart-summary .total {
             font-weight: bold;
+            font-size: 20px;
             color: #e74c3c;
         }
 
-        /* زر القيام بالطلب */
-        .order-button {
-            width: 100%;
-            padding: 15px;
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
+        .discount-code {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #007bff;
             cursor: pointer;
-            text-align: center;
         }
 
-        .order-button:hover {
-            background-color: #c0392b;
+        .discount-code:hover {
+            text-decoration: underline;
         }
 
-        /* تنسيق النصوص الثانوية */
-        .discount-code, .payment-option {
-            color: #16a085;
-            cursor: pointer;
+        /* الدفع بالتقسيط */
+        .payment-option {
+            color: #ff5733;
+            font-weight: bold;
             margin-top: 10px;
         }
 
-        .discount-code:hover, .payment-option:hover {
+        /* زر إتمام الطلب */
+        .order-btn {
+            background-color: #1d2b40;
+            color: white;
+            padding: 12px 20px;
+            width: 100%;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .order-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* فقرة التقدير */
+        .estimate {
+            font-size: 16px;
+            text-align: right;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .estimate:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- رأس الصفحة -->
+    <!-- شريط العنوان العلوي -->
     <div class="header">
-        <h1>سلة التسوق</h1>
+        <h1>demarq <span style="color: #e74c3c;">online</span></h1>
+        <input class="search-bar" type="text" placeholder="Senseo, lave-linge, TV 4K...">
+        <button class="cart-btn">Panier</button>
     </div>
 
-    <!-- حاوية سلة التسوق -->
+    <!-- سلة التسوق -->
     <div class="cart-container">
-        <div class="cart-header">
-            <h2>تفاصيل الطلب</h2>
-            <div>عدد المنتجات: 3</div>
+        <div class="cart-header">RÉSUMÉ</div>
+
+        <!-- ملخص سلة التسوق -->
+        <div class="cart-summary">
+            <div><span>Sous-total (HT)</span><span>12,49 €</span></div>
+            <div><span>Sous-total (TTC)</span><span>14,99 €</span></div>
+            <div><span>Taxe</span><span>2,50 €</span></div>
+            <div><span>Total de la commande TTC</span><span class="total">14,99 €</span></div>
+            <div><span>Total de la commande HT</span><span>12,49 €</span></div>
         </div>
 
-        <!-- تفاصيل المنتجات في السلة -->
-        <div class="cart-items">
-            <div class="item">
-                <div class="item-name">منتج 1</div>
-                <div class="item-price">50.00 د.ج</div>
-            </div>
-            <div class="item">
-                <div class="item-name">منتج 2</div>
-                <div class="item-price">30.00 د.ج</div>
-            </div>
-            <div class="item">
-                <div class="item-name">منتج 3</div>
-                <div class="item-price">20.00 د.ج</div>
-            </div>
-        </div>
-
-        <!-- حسابات السلة -->
-        <div class="cart-summary">
-            <div>المجموع الفرعي</div>
-            <div>100.00 د.ج</div>
-        </div>
-        <div class="cart-summary">
-            <div>الضريبة (10%)</div>
-            <div>10.00 د.ج</div>
-        </div>
-        <div class="cart-summary total">
-            <div>المجموع الكلي</div>
-            <div>110.00 د.ج</div>
-        </div>
+        <!-- تقدير الشحن والضرائب -->
+        <div class="estimate">ESTIMER LA LIVRAISON ET LA TVA</div>
 
         <!-- كود الخصم -->
-        <div class="discount-code">تطبيق كود خصم</div>
+        <div class="discount-code">APPLIQUER UN CODE DE RÉDUCTION</div>
 
         <!-- خيار الدفع -->
-        <div class="payment-option">الدفع بالتقسيط مع "ألما"</div>
+        <div class="payment-option">Alma: Nouveau paiement en 3x sans frais dès 50€</div>
 
-        <!-- زر القيام بالطلب -->
-        <button class="order-button" onclick="window.location.href='traitement1.html'">إتمام الطلب</button>
+        <!-- زر إتمام الطلب -->
+        <button class="order-btn" onclick="window.location.href='traitement1.html'">COMMANDE</button>
     </div>
 
 </body>
