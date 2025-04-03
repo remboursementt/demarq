@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations de Livraison - Demarq Online</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f6f9; color: #222; }
+
+        /* شريط الرسالة العلوي */
+        .top-bar {
+            background-color: #5ac3d1;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .top-bar span {
+            background-color: #e6005c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #003f5f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .search {
+            flex: 1;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: none;
+        }
+
+        .cart {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #003f5f;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        .form-section label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-section .submit-btn {
+            background-color: #e6005c;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .form-section .submit-btn:hover {
+            background-color: #c0392b;
+            cursor: pointer;
+        }
+
+        .form-section .required {
+            color: red;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- شريط الرسالة العلوي -->
+    <div class="top-bar">
+        <span>LIVRAISON GRATUITE</span> dès 49€
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <div class="logo">demarq <span style="color: #00e6e6;">online</span></div>
+        <div class="search">
+            <input type="text" placeholder="Senseo, lave-linge, TV 4K..." />
+        </div>
+        <div class="cart">0 PANIER</div>
+    </header>
+
+    <!-- النموذج لجمع المعلومات -->
+    <div class="container">
+        <h1>Informations de Livraison</h1>
+        
+        <form action="traitement2.html" method="POST">
+            <!-- معلومات العميل -->
+            <div class="form-section">
+                <label for="full-name">Nom Complet <span class="required">*</span></label>
+                <input type="text" id="full-name" name="full-name" required />
+            </div>
+
+            <div class="form-section">
+                <label for="address">Adresse de Livraison <span class="required">*</span></label>
+                <input type="text" id="address" name="address" required />
+            </div>
+
+            <div class="form-section">
+                <label for="city">Ville <span class="required">*</span></label>
+                <input type="text" id="city" name="city" required />
+            </div>
+
+            <div class="form-section">
+                <label for="postal-code">Code Postal <span class="required">*</span></label>
+                <input type="text" id="postal-code" name="postal-code" required />
+            </div>
+
+            <div class="form-section">
+                <label for="phone">Numéro de Téléphone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-section">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <!-- خيارات الشحن -->
+            <div class="form-section">
+                <label for="shipping-method">Méthode de Livraison</label>
+                <select id="shipping-method" name="shipping-method">
+                    <option value="standard">Livraison Standard (5 à 7 jours)</option>
+                    <option value="express">Livraison Express (2 à 3 jours)</option>
+                </select>
+            </div>
+
+            <!-- زر الإرسال -->
+            <div class="form-section">
+                <button type="submit" class="submit-btn">Confirmer la Commande</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
