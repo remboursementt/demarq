@@ -5,21 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lot de 2 Micros Sans Fil - Demarq</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: #f6f7f9; color: #222; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f6f7f9;
+      color: #222;
+    }
 
     /* Top bar */
     .top-bar {
       background: #b3e6f7;
-      padding: 8px;
+      padding: 10px;
       text-align: center;
       font-size: 14px;
     }
+
     .top-bar span {
       background: #e6005c;
       color: white;
-      padding: 3px 8px;
-      border-radius: 4px;
+      padding: 5px 12px;
+      border-radius: 5px;
       font-weight: bold;
     }
 
@@ -27,55 +37,64 @@
     header {
       background: #002640;
       color: white;
-      padding: 15px 20px;
+      padding: 20px 30px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-    .logo { font-size: 22px; font-weight: bold; }
-    .search {
-      flex: 1;
-      margin: 0 20px;
-      position: relative;
-    }
-    .search input {
-      width: 100%;
-      padding: 10px 15px;
-      border-radius: 30px;
-      border: none;
-    }
-    .search:after {
-      content: '🔍';
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .cart {
-      font-weight: bold;
-      font-size: 15px;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Breadcrumb */
-    .breadcrumb {
-      font-size: 13px;
-      margin: 15px 20px;
-      color: #555;
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00e6e6;
+    }
+
+    .search {
+      flex: 1;
+      margin: 0 30px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 50px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search::after {
+      content: '🔍';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #00e6e6;
+    }
+
+    .cart {
+      font-weight: bold;
+      font-size: 18px;
     }
 
     /* Container */
     .container {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 30px auto;
       background: white;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
-      font-size: 20px;
+      font-size: 28px;
       color: #002640;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-weight: bold;
     }
 
     /* Carousel */
@@ -83,73 +102,81 @@
       width: 100%;
       height: 500px;
       overflow: hidden;
-      margin: 0 auto;
+      margin-bottom: 30px;
       position: relative;
+      border-radius: 8px;
     }
 
     .carousel-images {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      transition: transform 0.5s ease-in-out;
     }
 
     .carousel-images img {
       height: 100%;
       width: 100%;
       object-fit: contain;
-      display: block;
-      margin: 0 10px;
-      scroll-snap-align: start;
+      margin: 0 5px;
+      border-radius: 8px;
     }
 
     .dots {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .dot {
-      height: 10px;
-      width: 10px;
+      height: 12px;
+      width: 12px;
       background-color: #ccc;
       border-radius: 50%;
       display: inline-block;
       margin: 0 5px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
+
     .dot.active {
       background-color: #002640;
     }
 
-    .badge {
-      background: limegreen;
-      color: white;
-      display: inline-block;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin: 10px 0;
+    /* Section */
+    .section {
+      margin-top: 20px;
     }
 
-    .section { margin: 30px 0; }
-    h2 { color: #002640; font-size: 18px; margin-bottom: 10px; }
-    ul { padding-left: 20px; }
-    ul li { margin-bottom: 5px; }
+    h2 {
+      color: #002640;
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
 
-    .info p { margin-bottom: 6px; }
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+    }
 
+    ul li {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    /* Price box */
     .price-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #fff0f5;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
-      margin-top: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .price {
-      font-size: 30px;
+      font-size: 36px;
       font-weight: bold;
       color: #e6005c;
     }
@@ -157,28 +184,32 @@
     .discount {
       background: #005fa3;
       color: white;
-      padding: 5px 10px;
+      padding: 8px 15px;
       border-radius: 4px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
+    /* Alma Box */
     .alma-box {
       background: #ffe5db;
-      padding: 10px;
+      padding: 15px;
       border: 1px solid #ffc0b3;
-      margin: 15px 0;
-      font-size: 14px;
+      margin: 20px 0;
+      font-size: 16px;
+      color: #555;
+      border-radius: 8px;
     }
 
     .stock {
       color: red;
       font-weight: bold;
-      margin: 15px 0;
+      margin: 20px 0;
+      font-size: 16px;
     }
 
     .availability {
-      font-size: 14px;
-      margin: 15px 0;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 
     .availability span {
@@ -192,16 +223,16 @@
       background: #00c853;
       color: white;
       padding: 15px 30px;
-      font-size: 16px;
-      border-radius: 30px;
+      font-size: 18px;
+      border-radius: 50px;
       text-align: center;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
     }
 
-    .availability span {
-      display: block;
-      color: green;
-      margin-top: 5px;
+    .btn:hover {
+      background: #388e3c;
     }
 
     /* Footer */
@@ -209,14 +240,30 @@
       background: #002640;
       color: white;
       padding: 30px 20px;
-      margin-top: 40px;
+      margin-top: 50px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
       font-size: 14px;
     }
 
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Newsletter */
     .newsletter input {
-      padding: 8px;
-      width: 250px;
-      margin: 10px 0;
+      padding: 12px;
+      width: 300px;
       border-radius: 5px;
       border: none;
     }
@@ -224,26 +271,34 @@
     .newsletter button {
       background: #e6005c;
       color: white;
-      padding: 8px 15px;
-      border: none;
+      padding: 12px 20px;
       border-radius: 5px;
+      border: none;
+      cursor: pointer;
     }
 
-    .footer-links a {
-      color: white;
-      margin-right: 15px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .price-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    .trust {
-      color: #00e676;
-      margin-top: 15px;
-    }
+      .carousel {
+        height: 300px;
+      }
 
-    @media(max-width: 768px) {
-      .price-box { flex-direction: column; align-items: flex-start; }
+      .carousel-images img {
+        object-fit: contain;
+      }
+
+      .search input {
+        padding: 12px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -324,25 +379,6 @@
     <div class="description-box">
       <h2>DESCRIPTION</h2>
       <p>Profitez de vos soirées karaoké avec ce <strong>lot de 2 micros sans fil Bluetooth</strong> Intempo, offrant une excellente portée et une grande compatibilité.</p>
-      <h3>Caractéristiques techniques</h3>
-      <ul>
-        <li>Technologie sans fil : Bluetooth</li>
-        <li>Compatibilité : smartphones, tablettes, TV et autres appareils Bluetooth</li>
-        <li>Portée sans fil : jusqu’à 25 mètres</li>
-        <li>Batterie rechargeable via câble USB inclus</li>
-        <li>Indicateur LED de charge et de connexion</li>
-      </ul>
-      <h3>Avantages du produit</h3>
-      <ul>
-        <li>Liberté de mouvement grâce à la connexion sans fil</li>
-        <li>Configuration simple et rapide avec appareils Bluetooth</li>
-        <li>Design léger et confortable, idéal pour des sessions prolongées</li>
-        <li>Convient pour des soirées karaoké en famille ou entre amis</li>
-        <li>Recharge facile pour une utilisation prolongée</li>
-      </ul>
-      <h3>Garantie et Support</h3>
-      <p>Profitez d'une garantie fabricant et de notre service client disponible pour toute question ou assistance sur ce produit.</p>
-      <p>Avec ce <strong>lot de 2 micros sans fil Bluetooth</strong>, offrez une <strong>expérience de karaoké immersive</strong> et profitez de chaque chanson avec une qualité audio exceptionnelle.</p>
     </div>
   </div>
 
