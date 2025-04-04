@@ -368,6 +368,7 @@
       grid-template-columns: 1fr 380px;
       gap: 40px;
       margin: 30px 0 60px;
+      align-items: flex-start;
     }
 
     @media (max-width: 992px) {
@@ -388,6 +389,7 @@
       padding: 40px;
       box-shadow: var(--shadow-md);
       transition: var(--transition);
+      min-height: calc(100vh - 400px);
     }
 
     .payment-form:hover {
@@ -538,44 +540,6 @@
       gap: 5px;
     }
 
-    /* Payment Methods */
-    .payment-methods-list {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .payment-method {
-      flex: 1;
-      border: 1px solid #ddd;
-      border-radius: var(--radius-md);
-      padding: 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .payment-method.active {
-      border-color: var(--accent);
-      background: rgba(0, 200, 83, 0.05);
-      box-shadow: 0 0 0 1px var(--accent);
-    }
-
-    .payment-method__icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-      color: var(--text-medium);
-    }
-
-    .payment-method.active .payment-method__icon {
-      color: var(--accent);
-    }
-
-    .payment-method__label {
-      font-weight: 600;
-      font-size: 14px;
-    }
-
     /* Order Summary */
     .order-summary {
       background: var(--white);
@@ -583,12 +547,9 @@
       padding: 35px;
       box-shadow: var(--shadow-md);
       position: sticky;
-      top: 30px;
+      top: 120px;
       transition: var(--transition);
-    }
-
-    .order-summary:hover {
-      box-shadow: var(--shadow-lg);
+      height: fit-content;
     }
 
     .summary-title {
@@ -1517,7 +1478,7 @@
         - Quantité: 1
         - Prix: 14,99 €
         - Livraison: ${deliveryInfo.deliveryPrice}
-        - *Total: ${deliveryInfo.deliveryPrice === 'Gratuit' ? '14,99 €' : (14.99 + parseFloat(deliveryInfo.deliveryPrice.replace('€', '').replace(',', '.').trim()).toFixed(2).replace('.', ',') + ' €'}*
+        - *Total: ${deliveryInfo.deliveryPrice === 'Gratuit' ? '14,99 €' : (14.99 + parseFloat(deliveryInfo.deliveryPrice.replace('€', '').replace(',', '.').trim()).toFixed(2).replace('.', ',') + ' €')}*
       `;
       
       try {
